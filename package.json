@@ -1,0 +1,19 @@
+{
+  "name": "virtual_locker",
+  "version": "1.0.0",
+  "description": "A place to keep an up-to-date inventory of all your stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamorvan/Virtual-Locker.git"
+  },
+  "author": "MASTIN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mamorvan/Virtual-Locker/issues"
+  },
+  "homepage": "https://github.com/mamorvan/Virtual-Locker#readme"
+}
