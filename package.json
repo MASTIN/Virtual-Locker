@@ -2,7 +2,7 @@
   "name": "virtual_locker",
   "version": "1.0.0",
   "description": "A place to keep an up-to-date inventory of all your stuff",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/mamorvan/Virtual-Locker/issues"
   },
-  "homepage": "https://github.com/mamorvan/Virtual-Locker#readme"
+  "homepage": "https://github.com/mamorvan/Virtual-Locker#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
+  }
 }
