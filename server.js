@@ -1,5 +1,9 @@
 
 var db = require("./models");
+
+
+
+
 //sequelize sync
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
