@@ -2,11 +2,17 @@ module.exports = function(sequelize, DataTypes) {
     var Item = sequelize.define("Item", {
         item_name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
         }, 
         location: {
              type: DataTypes.STRING,
-             allowNull: false
+             allowNull: false,
+             validate: {
+                 notEmpty: true
+             }
         },
         category: {
             type: DataTypes.STRING,
@@ -14,21 +20,30 @@ module.exports = function(sequelize, DataTypes) {
         },
         value: {
             type: DataTypes.DECIMAL,
-            //add money validation
+            allowNull: true
         },
         date_purchased: {
             type: DataTypes.DATEONLY,
-            //optional
+            allowNull: true
         },
         purchase_price: {
             type: DataTypes.DECIMAL,
-            //add money validation
+            allowNull: true
         },
-        serial_number: DataTypes.STRING,
-        image: DataTypes.STRING,
-        notes: DataTypes.TEXT
+        serial_number: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        notes: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
     },
-        {
+        { //Item belongs to one User
             classMethods: {
                 associate: function(models) {
                     Item.belongsTo(models.User, {
