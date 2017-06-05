@@ -27,6 +27,18 @@ module.exports = function(sequelize, DataTypes) {
         serial_number: DataTypes.STRING,
         image: DataTypes.STRING,
         notes: DataTypes.TEXT
-    });
-    return User;
+    },
+        {
+            classMethods: {
+                associate: function(models) {
+                    Item.belongsTo(models.User, {
+                        foreignKey: {
+                            allowNull: false
+                        }
+                    });
+                }
+            }
+        }
+    );
+    return Item;
 };
