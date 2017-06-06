@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "b1c646dcf1e167",
-    "password": "c4a1f898",
-    "database": "heroku_b8631badbac79e9",
-    "host": "us-cdbr-iron-east-03.cleardb.net",
+    "username": "root",
+    "password": null,
+    "database": "VirtualLockerDB",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "b1c646dcf1e167",
-    "password": "c4a1f898",
-    "database": "heroku_b8631badbac79e9",
-    "host": "us-cdbr-iron-east-03.cleardb.net",
+    "username": "jh8cy0x372s2hn2q",
+    "password": "x93sf1u64mssidfb",
+    "database": "pc5eekpar48lja4g",
+    "host": "mgs0iaapcj3p9srz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
