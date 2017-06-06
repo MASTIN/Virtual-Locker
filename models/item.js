@@ -34,10 +34,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true
         },
-        image: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
+        // add later 
+        // image: {
+        //     type: DataTypes.STRING,
+        //     allowNull: true
+        // },
         notes: {
             type: DataTypes.TEXT,
             allowNull: true
