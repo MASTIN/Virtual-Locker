@@ -22,7 +22,8 @@ app.use(express.static(path.join(__dirname + "./public")));
 
 
 //sequelize sync models then start express app
-db.sequelize.sync().then(function() {
+// This we'll use if we need to change the tables
+db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
         console.log("Virtual Locker is listening on port: " + PORT);
     });
