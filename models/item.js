@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
         serial_number: {
             type: DataTypes.STRING,
             allowNull: true
-        },
+        },   
         image: {
             type: DataTypes.STRING,
             allowNull: true
