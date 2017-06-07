@@ -20,27 +20,84 @@
 	<h1>Add an Item</h1>
 
 	<form class="form-horizontal">
+
 	  <div class="form-group">
-	    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+	    <label for="input_item_name" class="col-sm-2 control-label">Item Name</label>
 	    <div class="col-sm-10">
-	      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+	      <input type="text" class="form-control" id="input_item_name" placeholder="item_name">
 	    </div>
 	  </div>
+
 	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+	    <label for="input_location" class="col-sm-2 control-label">Location</label>
 	    <div class="col-sm-10">
-	      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+	      <input type="text" class="form-control" id="input_location" placeholder="location">
 	    </div>
 	  </div>
+
 	  <div class="form-group">
-	    <div class="col-sm-offset-2 col-sm-10">
-	      <div class="checkbox">
-	        <label>
-	          <input type="checkbox"> Remember me
-	        </label>
-	      </div>
+	    <label for="input_category" class="col-sm-2 control-label">Category</label>
+	    <div class="col-sm-10">
+			<select class="form-control">
+			  <option selected>Category</option>
+			  <option>Electronics</option>
+			  <option>Appliances</option>
+			  <option>Furniture</option>
+			  <option>Jewelry</option>
+			  <option>Kitchenware</option>
+			  <option>Tools / Machinery</option>
+			  <option>Collectibles</option>
+			  <option>Clothing</option>
+			  <option>Recreation</option>
+			  <option>Misc</option>
+			</select>	    
+	      <!-- <input type="text" class="form-control" id="input_category" placeholder="category"> -->
 	    </div>
 	  </div>
+
+	  <div class="form-group">
+	    <label for="input_value" class="col-sm-2 control-label">Value</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="input_value" placeholder="value">
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="input_date" class="col-sm-2 control-label">Date Purchased</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="input_date" placeholder="date_purchased">
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="input_purchase_price" class="col-sm-2 control-label">Purchase Price</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="input_purchase_price" placeholder="purchase_price">
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="input_serial_number" class="col-sm-2 control-label">Serial Number</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="input_serial_number" placeholder="serial_number">
+	    </div>
+	  </div>	
+
+	  <div class="form-group">
+	    <label for="input_image" class="col-sm-2 control-label">Image URL</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="input_image" placeholder="image">
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="input_notes" class="col-sm-2 control-label">Notes</label>
+	    <div class="col-sm-10">
+	      <textarea class="form-control" rows="3"></textarea>
+	      <!-- <input type="text" class="form-control" id="input_notes" placeholder="notes"> -->
+	    </div>
+	  </div>
+
 	  <div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
 	      <button type="submit" class="btn btn-default">Submit</button>
