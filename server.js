@@ -16,7 +16,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 
 //set up static directory for all public files
-app.use(express.static(path.join(__dirname + "./public")));
+// app.use(express.static(path.join(__dirname + "./public")));
+app.use(express.static("./public"));
 
 //*****ROUTES*****//
 require("./routes/html-routes.js")(app);
