@@ -2,8 +2,9 @@
 <html>
 <head>
 	<title>Add Item Page</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<!-- CUSTOM STYLESHEET -->
@@ -11,37 +12,38 @@
 	<!-- FONT AWESOME -->
 	<script src="https://use.fontawesome.com/feca357678.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- CUSTOM JAVASCRIPT -->
+	<script src="js/table.js"></script>
 
 </head>
 <body>
 <div class="container">
 	
 	<h1>Add an Item</h1>
-<i class="fa fa-bicycle" aria-hidden="true"></i>
 
 	<form class="form-horizontal">
 
 	  <div class="form-group">
 	    <label for="input_item_name" class="col-sm-2 control-label">Item Name</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="input_item_name" placeholder="item_name">
+	      <input type="text" class="form-control" id="item_name" placeholder="item_name">
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	    <label for="input_location" class="col-sm-2 control-label">Location</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="input_location" placeholder="location">
+	      <input type="text" class="form-control" id="location" placeholder="location">
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	    <label for="input_category" class="col-sm-2 control-label">Category</label>
 	    <div class="col-sm-10">
-			<select class="form-control">
+			<select class="form-control" id="category">
 			  <option selected>Category</option>
 			  <option>Electronics</option>
 			  <option>Appliances</option>
@@ -54,47 +56,47 @@
 			  <option>Recreation</option>
 			  <option>Misc</option>
 			</select>	    
-	      <!-- <input type="text" class="form-control" id="input_category" placeholder="category"> -->
+	       <!--<input type="text" class="form-control" id="category" placeholder="category"> -->
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	    <label for="input_value" class="col-sm-2 control-label">Value</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="input_value" placeholder="value">
+	      <input type="number" class="form-control" id="value" placeholder="value">
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	    <label for="input_date" class="col-sm-2 control-label">Date Purchased</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="input_date" placeholder="date_purchased">
+	      <input type="date" class="form-control" id="date_purchased" placeholder="date_purchased">
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	    <label for="input_purchase_price" class="col-sm-2 control-label">Purchase Price</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="input_purchase_price" placeholder="purchase_price">
+	      <input type="value" class="form-control" id="purchase_price" placeholder="purchase_price">
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	    <label for="input_serial_number" class="col-sm-2 control-label">Serial Number</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="input_serial_number" placeholder="serial_number">
+	      <input type="text" class="form-control" id="serial_number" placeholder="serial_number">
 	    </div>
 	  </div>	
 
 	  <div class="form-group">
 	    <label for="input_image" class="col-sm-2 control-label">Image URL</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="input_image" placeholder="image">
+	      <input type="url" class="form-control" id="image" placeholder="image">
 	    </div>
 	  </div>
 
 	  <div class="form-group">
-	    <label for="input_notes" class="col-sm-2 control-label">Notes</label>
+	    <label for="input_notes" class="col-sm-2 control-label" id="notes">Notes</label>
 	    <div class="col-sm-10">
 	      <textarea class="form-control" rows="3"></textarea>
 	      <!-- <input type="text" class="form-control" id="input_notes" placeholder="notes"> -->
@@ -103,7 +105,7 @@
 
 	  <div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">Submit</button>
+	      <button type="submit" class="btn btn-default" id="newItem">Submit</button>
 	    </div>
 	  </div>
 	</form>
