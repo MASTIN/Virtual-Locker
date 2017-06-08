@@ -2,7 +2,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-//add express-handlebars and method-override?
 var db = require("./models");
 
 //set up Express app
@@ -16,7 +15,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 
 //set up static directory for all public files
-// app.use(express.static(path.join(__dirname + "./public")));
+// app.use(express.static(path.join(__dirname + "public")));
 app.use(express.static("./public"));
 
 //*****ROUTES*****//
