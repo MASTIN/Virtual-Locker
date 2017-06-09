@@ -70,18 +70,23 @@ $(document).ready(function() {
     }
 
     function displayData(data) {
- 
+        
         // This will display the rows of data from the database into the table
         for (var i = 0; i < data.length; i++) {
 
-            var rowofdata = $("<tr>" + "<td>" + data[i].item_name + "</td><td>" + data[i].location + 
-            "</td><td>" + data[i].category + "</td><td>" + data[i].value + "</td><td>" + moment(data[i].date_purchased).format("L") +
-            "</td><td>" + data[i].purchase_price + "</td><td>" + data[i].serial_number + "</td><td>" +
-            "<i id='photo' class='fa fa-picture-o fa-lg' src='" + data[i].image + "' aria-hidden='true'></i>" +
-            "</td><td>" + data[i].notes + "</td><td>" +
-            "<i value='" + i + "' class='fa fa-pencil fa-lg updateItem' aria-hidden='true'></i>" +
-            "</td><td>" + "<i value='" + i + "' class='fa fa-trash fa-lg deleteItem' aria-hidden='true'></i>" + "</tr>");
-            
+            var rowofdata = [ 
+                data[i].item_name,
+                data[i].location,
+                data[i].category,
+                "$" + data[i].value,
+                moment(data[i].date_purchased).format("L"),
+                "$" + data[i].purchase_price,
+                data[i].serial_number,
+                "<i id='photo' class='fa fa-picture-o fa-lg' src='" + data[i].image + "' aria-hidden='true'></i>",
+                data[i].notes,
+                "<i value='" + i + "' class='fa fa-pencil fa-lg updateItem' aria-hidden='true'></i>",
+                "<i value='" + i + "' class='fa fa-trash fa-lg deleteItem' aria-hidden='true'></i>"];
+
             table.row.add(rowofdata).draw();
         }
 
