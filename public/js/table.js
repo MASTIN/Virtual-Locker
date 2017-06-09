@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    // $('#inventory').DataTable();
-
+    // initialize DataTable
+   $('#inventory').DataTable();
     // This runs when the user submits a new item
     $("#newItem").on("click", function(event) {
         
