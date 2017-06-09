@@ -76,7 +76,14 @@ button.login:last-child {
 	width: 40px;
 	height: auto;
 }
-/* ADD ITEM PAGE STYLING */
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar-brand {
+	font-family: 'Fjalla One', sans-serif;
+}
+
 #addHeader {
 	text-align: center;
 }
