@@ -22,7 +22,7 @@ $(document).ready(function() {
                 "$" + data[i].purchase_price.toLocaleString(),
                 data[i].serial_number,
                 "<i id='photo' class='fa fa-picture-o fa-lg center-td' src='" + data[i].image + "' aria-hidden='true'></i>",
-                data[i].notes,
+                "<i id='notes' class='fa fa-file-text-o fa-lg center-td' src='" + data[i].notes + "' aria-hidden='true'></i>",
                 "<i value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i>",
                 "<i value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i>"];
 
@@ -32,6 +32,10 @@ $(document).ready(function() {
         // This shows the image when the picture icon is clicked
         $(".fa-picture-o").click(function(){
             alert("This will show the image. When it's coded correctly");
+        });
+        // This shows the notes when the text icon is clicked
+        $("#notes").click(function(){
+            alert("This will show the notes. When it's coded correctly");
         });
 
         // This deletes a line when the trashcan icon on a line is clicked
