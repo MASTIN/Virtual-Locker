@@ -1,6 +1,8 @@
 $(document).ready(function() {
     // initialize DataTable
-   var table = $('#inventory').DataTable();
+   var table = $('#inventory').DataTable({
+        'order': [[2 , 'asc']]
+   });
 
     // This section will get info from the db and display the items on the inventory.html page
     function getInventory() {
@@ -19,10 +21,10 @@ $(document).ready(function() {
                 moment(data[i].date_purchased).format("L"),
                 "$" + data[i].purchase_price.toLocaleString(),
                 data[i].serial_number,
-                "<i id='photo' class='fa fa-picture-o fa-lg' src='" + data[i].image + "' aria-hidden='true'></i>",
+                "<i id='photo' class='fa fa-picture-o fa-lg center-td' src='" + data[i].image + "' aria-hidden='true'></i>",
                 data[i].notes,
-                "<i value='" + i + "' class='fa fa-pencil fa-lg updateItem' aria-hidden='true'></i>",
-                "<i value='" + i + "' class='fa fa-trash fa-lg deleteItem' aria-hidden='true'></i>"];
+                "<i value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i>",
+                "<i value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i>"];
 
             table.row.add(rowofdata).draw();
         }

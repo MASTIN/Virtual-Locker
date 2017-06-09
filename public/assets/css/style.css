@@ -84,6 +84,14 @@ button.login:last-child {
 #inventory thead, tfoot {
 	background-color: #BDBDC0; 	
 }
+/*center icons in table*/
+.center-td {
+margin-left: 25%;
+margin-right: 35%;
+width: 40%;
+
+
+}
 /* ADD ITEM PAGE STYLING */
 #addHeader {
 	text-align: center;
