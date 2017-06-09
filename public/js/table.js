@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // initialize DataTable
-   $('#inventory').DataTable();
+   var table = $('#inventory').DataTable();
+
    
     // This runs when the user submits a new item
     $("#newItem").on("click", function(event) {
@@ -69,7 +70,7 @@ $(document).ready(function() {
     }
 
     function displayData(data) {
-        $("#dbInventory").empty();
+ 
         // This will display the rows of data from the database into the table
         for (var i = 0; i < data.length; i++) {
 
@@ -81,7 +82,7 @@ $(document).ready(function() {
             "<i value='" + i + "' class='fa fa-pencil fa-lg updateItem' aria-hidden='true'></i>" +
             "</td><td>" + "<i value='" + i + "' class='fa fa-trash fa-lg deleteItem' aria-hidden='true'></i>" + "</tr>");
             
-            $("#dbInventory").append(rowofdata);
+            table.row.add(rowofdata).draw();
         }
 
         // This shows the image when the picture icon is clicked
