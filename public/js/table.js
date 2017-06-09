@@ -76,7 +76,7 @@ $(document).ready(function() {
             var rowofdata = $("<tr>" + "<td>" + data[i].item_name + "</td><td>" + data[i].location + 
             "</td><td>" + data[i].category + "</td><td>" + data[i].value + "</td><td>" + moment(data[i].date_purchased).format("L") +
             "</td><td>" + data[i].purchase_price + "</td><td>" + data[i].serial_number + "</td><td>" +
-            "<i id='photo' class='fa fa-picture-o' src='" + data[i].image + "' aria-hidden='true'></i>" +
+            "<i id='photo' class='fa fa-picture-o fa-lg' src='" + data[i].image + "' aria-hidden='true'></i>" +
             "</td><td>" + data[i].notes + "</td><td>" +
             "<i value='" + i + "' class='fa fa-pencil fa-lg updateItem' aria-hidden='true'></i>" +
             "</td><td>" + "<i value='" + i + "' class='fa fa-trash fa-lg deleteItem' aria-hidden='true'></i>" + "</tr>");
@@ -91,12 +91,12 @@ $(document).ready(function() {
 
         // This deletes a line when the trashcan icon on a line is clicked
         $(".deleteItem").click(function(){
-            alert("This will delete the item completely. When it's coded correctly");
+            alert("This will delete the selected item completely. When it's coded correctly");
         });
 
         // This updates an item when the pencil icon on that line is clicked
         $(".updateItem").click(function(){
-            alert("This will delete the item completely. When it's coded correctly");
+            alert("This will update the selected item. When it's coded correctly");
         });
 
     }
