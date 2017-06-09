@@ -69,6 +69,7 @@ $(document).ready(function() {
     }
 
     function displayData(data) {
+        $("#dbInventory").empty();
         // This will display the rows of data from the database into the table
         for (var i = 0; i < data.length; i++) {
 
