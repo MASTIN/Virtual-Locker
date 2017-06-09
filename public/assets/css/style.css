@@ -14,7 +14,7 @@
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
-img.bg {
+.bgimage {
   /* Set rules to fill background */
   min-height: 100%;
   min-width: 1024px;
@@ -28,7 +28,12 @@ img.bg {
   top: 0;
   left: 0;
 
-  opacity: .6;
+  opacity: .5;
+}
+
+#headerlogo {
+	width: 100px;
+	height: auto;
 }
 
 #landingPageHeader {
@@ -56,6 +61,21 @@ button.login:last-child {
     margin-left: 40px;
 }
 
+/* NAVBAR STYLING */
+.navbar {
+	margin-bottom: 0;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 20px;
+}
+
+.dropdown {
+	margin-top: 10px;
+}
+
+#navbarlogo {
+	width: 40px;
+	height: auto;
+}
 .navbar {
 	margin-bottom: 0;
 }

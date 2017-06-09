@@ -9,16 +9,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<!-- CUSTOM STYLESHEET -->
 	<link rel="stylesheet" href="./assets/css/style.css">
-	<!-- FONT AWESOME and GOOGLE FRONTS -->
+	<!-- FONT AWESOME and GOOGLE FONTS -->
 	<script src="https://use.fontawesome.com/feca357678.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
 	<!-- CUSTOM JAVASCRIPT -->
-	<script src="js/table.js"></script>
-
+<!-- 	<script src="js/table.js"></script> -->
 </head>
 
 <body>
@@ -34,9 +33,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <a class="navbar-brand" href="safekeep.html">SafeKeeper <i class="fa fa-lock"></i></a>
     </div>
+
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="safekeeper.html"><img id="navbarlogo" src="./assets/images/safelogo.png"></a></li>
+	</ul>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,14 +68,14 @@
 		  <div class="form-group">
 		    <label for="input_item_name" class="col-sm-3 control-label">Item Name</label>
 		    <div class="col-sm-9">
-		      <input type="text" class="form-control" id="item_name" placeholder="item_name">
+		      <input type="text" class="form-control" id="item_name" name="item_name" placeholder="Macbook Pro">
 		    </div>
 		  </div>
 
 		  <div class="form-group">
 		    <label for="input_location" class="col-sm-3 control-label">Location</label>
 		    <div class="col-sm-9">
-		      <input type="text" class="form-control" id="location" placeholder="location">
+		      <input type="text" class="form-control" id="location" placeholder="Bedroom">
 		    </div>
 		  </div>
 
@@ -95,7 +96,13 @@
 				  <option>Misc</option>
 				</select>	    
 		       <!--<input type="text" class="form-control" id="category" placeholder="category"> -->
-		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <label for="input_value" class="col-sm-3 control-label">Value ($)</label>
+		    <div class="col-sm-9">
+		      <input type="number" class="form-control" id="value" placeholder="750">
+			  </div>
 		  </div>
 
 		  <div class="form-group">
@@ -108,28 +115,28 @@
 		  <div class="form-group">
 		    <label for="input_date" class="col-sm-3 control-label">Date Purchased</label>
 		    <div class="col-sm-9">
-		      <input type="date" class="form-control" id="date_purchased" placeholder="date_purchased">
+		      <input type="date" class="form-control" id="date_purchased" placeholder="01/01/2017">
 		    </div>
 		  </div>
 
 		  <div class="form-group">
-		    <label for="input_purchase_price" class="col-sm-3 control-label">Purchase Price</label>
+		    <label for="input_purchase_price" class="col-sm-3 control-label">Purchase Price ($)</label>
 		    <div class="col-sm-9">
-		      <input type="value" class="form-control" id="purchase_price" placeholder="purchase_price">
+		      <input type="value" class="form-control" id="purchase_price" placeholder="1200">   
 		    </div>
 		  </div>
 
 		  <div class="form-group">
 		    <label for="input_serial_number" class="col-sm-3 control-label">Serial Number</label>
 		    <div class="col-sm-9">
-		      <input type="text" class="form-control" id="serial_number" placeholder="serial_number">
+		      <input type="text" class="form-control" id="serial_number" placeholder="7ADF89DF7">
 		    </div>
 		  </div>	
 
 		  <div class="form-group">
 		    <label for="input_image" class="col-sm-3 control-label">Image URL</label>
 		    <div class="col-sm-9">
-		      <input type="url" class="form-control" id="image" placeholder="image">
+		      <input type="url" class="form-control" id="image" placeholder="macbook.jpg">
 		    </div>
 		  </div>
 
@@ -137,7 +144,6 @@
 		    <label for="input_notes" class="col-sm-3 control-label" id="notes">Notes</label>
 		    <div class="col-sm-9">
 		      <textarea class="form-control" rows="3"></textarea>
-		      <!-- <input type="text" class="form-control" id="input_notes" placeholder="notes"> -->
 		    </div>
 		  </div>
 
@@ -148,8 +154,36 @@
 		  </div>
 		</form>
 	</div>
-	</div>
+
+</div>
+
 </div>
 </div>
+
+<script>
+// ON SUBMIT, CAPTURE FORM INPUT
+// .serialize() method will capture form input (does not include select elements)
+// For a form element's value to be included in the serialized string, it must have a name attribute.
+  $( "button[type='submit']" ).on( "click", function (event) {
+  	event.preventDefault();
+    var datastring = $( "form" ).serialize();
+    console.log(datastring);
+// POST REQUEST
+	$.ajax({
+	    type: "POST",
+	    url: "your url.php",
+	    data: datastring,
+	    dataType: "json",
+	    success: function(data) {
+	    	// if the dataType is not specified as json uncomment this
+	        var obj = jQuery.parseJSON(data); 
+	        // do what you want with the server response
+	    },
+	    error: function() {
+	        alert('error handing here');
+	    }
+	});
+  });
+</script>
 </body>
 </html>
