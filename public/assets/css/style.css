@@ -76,6 +76,14 @@ button.login:last-child {
 	width: 40px;
 	height: auto;
 }
+
+/*TABLE STYLING*/
+#inventory {
+	border: 5px #8E8671 solid;
+}
+#inventory thead, tfoot {
+	background-color: #BDBDC0; 	
+}
 /* ADD ITEM PAGE STYLING */
 #addHeader {
 	text-align: center;
