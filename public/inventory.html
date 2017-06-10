@@ -31,51 +31,25 @@
 </head>
 <body>
 <!-- FIXED NAVBAR -->
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <a class="navbar-brand" href="safekeep.html">SafeKeeper <i class="fa fa-lock"></i></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="add.html">Add an Item</a></li>
-            <li><a href="inventory.html">View Inventory</a></li>
-            <li><a href="index.html">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+<nav class="fixed-nav-bar">
+  <!-- Fixed navigation bar content -->
+  <a href="safekeeper.html">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
 </nav>
+
 <div class="container">
 	
-	<h1>Inventory</h1>
 
 	<div id= "table-container">
-
+		<h1>Inventory</h1>
 	  <table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
 	    <thead>
 	      <tr>
 	        <th>Item <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-	        <th>Location <span class="glyphicon glyphicon-sort" aria-hidden="true"></th>
-	        <th>Category <span class="glyphicon glyphicon-sort" aria-hidden="true"></th>
-	        <th>Value <span class="glyphicon glyphicon-sort" aria-hidden="true"></th>
-	        <th>Purchase<br>Date <span class="glyphicon glyphicon-sort" aria-hidden="true"></th>
-	        <th>Purchase<br>Price <span class="glyphicon glyphicon-sort" aria-hidden="true"></th>
+	        <th>Location <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+	        <th>Category <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+	        <th>Value <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+	        <th>Purchase<br>Date <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+	        <th>Purchase<br>Price <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
 	        <th>Serial<br>Number</th>
 	        <th>Image</th>
 	        <th>Notes</th>
@@ -83,7 +57,7 @@
 					<th>Delete</th>
 	      </tr>
 	    </thead>
-			<tfoot>
+<!-- 			<tfoot>
 					<tr>
 						<th>Item</th>
 						<th>Location</th>
@@ -97,7 +71,7 @@
 						<th>Update</th>
 						<th>Delete</th>
 					</tr>
-        </tfoot>
+        </tfoot> -->
 	    <tbody>
 				
 	    </tbody>
@@ -105,5 +79,13 @@
 	</div>
 </div>
 
+<!-- STICKY FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p><a href="https://github.com/MASTIN/Virtual-Locker" target="_blank" >
+        <i class="fa fa-github"></i></a>
+      	</p>
+    </div>    
+</footer>
 </body>
 </html>
