@@ -17,24 +17,99 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- BACKGROUND IMAGE OF A SAFE -->
-<!-- <img class="bg" src="./assets/images/safe.png">
- -->
-<!-- ALTERNATIVE BACKGROUND IMAGE -->
-<!-- <img class="bgimage" src="./assets/images/chainlink.jpg">
- --> <div class="container">
+<!-- BACKGROUND IMAGE -->
+<img class="bgimage" src="./assets/images/grey.jpg">
+ <div class="container">
 	<div class="centerContentParent">
 		<div class="centerContentChild">
-
+			<!-- HEADER -->
 			<h1 id="landingPageHeader">SafeKeeper
 			<img id="headerlogo" src="./assets/images/safelogo.png"></h1>
-
+			<!-- LOGIN BUTTONS -->
 			<div id="loginButtons">
-				<button type="button" class="login btn btn-lg btn-warning">Sign Up  <i class="fa fa-user"></i></button>
-				<button type="button" class="login btn btn-lg btn-warning">Sign In  <i class="fa fa-user"></i></button>
+				<button type="button" class="login btn btn-lg btn-warning" data-toggle="modal" data-target="#signupModal">Sign Up  <i class="fa fa-user"></i></button>
+				<button type="button" class="login btn btn-lg btn-warning" data-toggle="modal" data-target="#signinModal">Sign In  <i class="fa fa-user"></i></button>
 			</div>
+
 		</div>
 	</div>
 </div>
+			<!-- Sign in Modal -->
+			<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="signinModalLabel">Sign In</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+					<form class="form-horizontal">
+						  <div class="form-group">
+						    <label for="email" class="col-sm-3 control-label">Email</label>
+						    <div class="col-sm-9">
+						      <input type="text" class="form-control" id="email" placeholder="">
+						    </div>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="password" class="col-sm-3 control-label">Password</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="password">
+						    </div>
+						  </div>					
+					</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-warning">Submit</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Sign up Modal -->
+			<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="signinModalLabel">Sign Up</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+					<form class="form-horizontal">
+						  <div class="form-group">
+						    <label for="username" class="col-sm-3 control-label">Name</label>
+						    <div class="col-sm-9">
+						      <input type="text" class="form-control" id="username" placeholder="">
+						    </div>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="username" class="col-sm-3 control-label">Email</label>
+						    <div class="col-sm-9">
+						      <input type="text" class="form-control" id="email" placeholder="">
+						    </div>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="password" class="col-sm-3 control-label">Password</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="password">
+						    </div>
+						  </div>					
+					</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-warning">Submit</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>			
+<!-- close container -->
 </body>
 </html>

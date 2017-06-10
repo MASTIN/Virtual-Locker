@@ -94,8 +94,25 @@ button.login:last-child {
 .addWrapper {
 	padding-top: 50px;
 	padding-bottom: 50px;
-	background: url("../images/chainlink.jpg") no-repeat center center fixed;
+	background: url("../images/grey.jpg") no-repeat center center fixed;
 	opacity: .8;
+}
+
+.modal-backdrop.in {
+	opacity: .3;
+}
+
+#signinModal, #signupModal {
+	margin-top: 100px;
+}
+
+.modal-title {
+	font-size: 30px;
+	float: left;
+}
+
+.modal-content {
+	font-family: 'Fjalla One', sans-serif;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
