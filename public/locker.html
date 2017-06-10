@@ -33,9 +33,8 @@
 				<h1 id="landingPageHeader">SafeKeeper
 				<img id="headerlogo" src="./assets/images/safelogo.png"></h1>
 				<!-- ACTION BUTTONS -->
-				<!-- class="login btn col-sm-5 btn-warning" -->
-				<button type="button" class="btn btn-warning btn-lg btn-block">View Inventory</button>
-				<button type="button" class="btn btn-warning btn-lg btn-block">Add Item</button>
+				<button id="invButton" type="button" class="btn btn-warning btn-lg btn-block">View Inventory</button>
+				<button id="addButton" type="button" class="btn btn-warning btn-lg btn-block">Add Item</button>
 			</div>
 		</div>
 	</div>
@@ -43,9 +42,17 @@
 </div>
 
 <script type="text/javascript">
-	var user = $(#showUsername);
+	// when button is clicked, routes user to corresponding page
+	$("#invButton").click(function () {
+        location.href = "/inventory";
+    });
+	$("#addButton").click (function () {
+        location.href = "/add";
+    });
+
+	var user = $("#showUsername");
 	// NEED TO GET CURRENT USER'S NAME FROM THE DATABASE
-	
+
 </script>
 
 </body>
