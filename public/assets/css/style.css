@@ -43,10 +43,6 @@
 	font-family: 'Fjalla One', sans-serif;
 }
 
-.fa-lock {
-	color: #f09614;
-}
-
 .fa-user {
 	padding-left: 10px;
 }
@@ -89,7 +85,6 @@ button.login:last-child {
 #table-container {
 	padding-top: 90px;
 	padding-bottom: 50px;
-
 }
 
 #inventory {
@@ -123,7 +118,7 @@ button.login:last-child {
 .addWrapper {
 	padding-top: 90px;
 	padding-bottom: 50px;
-	background: url("../images/grey.jpg") no-repeat center center fixed;
+	background: url("../images/grey.jpg") no-repeat center center fixed; 	
 	opacity: .8;
 }
 
