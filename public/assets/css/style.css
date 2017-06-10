@@ -53,12 +53,11 @@
 
 #loginButtons {
 	text-align: center;
-	margin-top: 80px;
-	font-family: 'Fjalla One', sans-serif;
+	margin-top: 30px;
 }
 
 button.login:last-child {
-    margin-left: 40px;
+    margin-left: 15%;
 }
 
 /* NAVBAR STYLING */
@@ -110,8 +109,35 @@ width: 40%;
 .addWrapper {
 	padding-top: 50px;
 	padding-bottom: 50px;
-	background: url("../images/chainlink.jpg") no-repeat center center fixed;
+	background: url("../images/grey.jpg") no-repeat center center fixed;
 	opacity: .8;
+}
+
+.modal-backdrop.in {
+	opacity: .3;
+}
+
+#signinModal, #signupModal {
+	margin-top: 100px;
+}
+
+.modal-title {
+	font-size: 30px;
+	float: left;
+}
+
+.modal-content {
+	font-family: 'Fjalla One', sans-serif;
+}
+
+#showUsername {
+	color: orange;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	left: 20px;
+	top: 15px;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
