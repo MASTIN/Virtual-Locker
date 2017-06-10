@@ -61,18 +61,27 @@ button.login:last-child {
 }
 
 /* NAVBAR STYLING */
-.navbar {
-	margin-bottom: 0;
+.fixed-nav-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+ 	height: 55px;
+ 	line-height: 55px;
 	font-family: 'Fjalla One', sans-serif;
-	font-size: 20px;
+	font-size: 22px;
+	background: rgba(208, 206, 200, .3);
+	color: #E3E1DC;
 }
 
-.dropdown {
-	margin-top: 10px;
+.fixed-nav-bar a {
+	margin-left: 7%;
+	color: #3E3F47;
 }
 
 #navbarlogo {
-	width: 40px;
+	width: 35px;
 	height: auto;
 }
 
@@ -107,7 +116,7 @@ width: 40%;
 }
 
 .addWrapper {
-	padding-top: 50px;
+	padding-top: 70px;
 	padding-bottom: 50px;
 	background: url("../images/grey.jpg") no-repeat center center fixed;
 	opacity: .8;
@@ -141,10 +150,11 @@ width: 40%;
 }
 
 footer {
-	font-family: 'Fjalla One', sans-serif;
 	background: rgba(207, 200, 200, .6);
 	background: url("../images/grey.jpg") no-repeat center center fixed;
-	color: rgba(207, 200, 200);
+	color: #696969;
+	font-size: 12px;
+	line-height: 8;
 }
 
 footer a {
