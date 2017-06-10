@@ -33,7 +33,7 @@
 
 		</div>
 	</div>
-</div>
+</div> <!-- close container -->
 			<!-- Sign in Modal -->
 			<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog" role="document">
@@ -47,23 +47,26 @@
 			      <div class="modal-body">
 					<form class="form-horizontal">
 						  <div class="form-group">
-						    <label for="email" class="col-sm-3 control-label">Email</label>
+						    <label for="userEmail" class="col-sm-3 control-label">Email</label>
 						    <div class="col-sm-9">
-						      <input type="text" class="form-control" id="email" placeholder="">
+						      <input type="text" class="form-control existinguser" id="userEmail" placeholder="">
 						    </div>
 						  </div>
 
 						  <div class="form-group">
-						    <label for="password" class="col-sm-3 control-label">Password</label>
+						    <label for="userPassword" class="col-sm-3 control-label">Password</label>
 						    <div class="col-sm-9">
-						      <input type="password" class="form-control" id="password">
+						      <input type="password" class="form-control existinguser" id="userPassword">
 						    </div>
 						  </div>					
 					</form>
+
+					<p class="alertUser"></p>
+					
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-warning">Submit</button>
+			        <button type="button" id="signinbutton" class="btn btn-warning">Submit</button>
 			      </div>
 			    </div>
 			  </div>
@@ -82,34 +85,39 @@
 			      <div class="modal-body">
 					<form class="form-horizontal">
 						  <div class="form-group">
-						    <label for="username" class="col-sm-3 control-label">Name</label>
+						    <label for="newUserName" class="col-sm-3 control-label">Name</label>
 						    <div class="col-sm-9">
-						      <input type="text" class="form-control" id="username" placeholder="">
+						      <input type="text" class="form-control newuser" id="newUserName" placeholder="">
 						    </div>
 						  </div>
 
 						  <div class="form-group">
-						    <label for="username" class="col-sm-3 control-label">Email</label>
+						    <label for="newUserEmail" class="col-sm-3 control-label">Email</label>
 						    <div class="col-sm-9">
-						      <input type="email" class="form-control" id="email" placeholder="">
+						      <input type="email" class="form-control newuser" id="newUserEmail" placeholder="">
 						    </div>
 						  </div>
 
 						  <div class="form-group">
-						    <label for="password" class="col-sm-3 control-label">Password</label>
+						    <label for="newUserPassword" class="col-sm-3 control-label">Password</label>
 						    <div class="col-sm-9">
-						      <input type="password" class="form-control" id="password">
+						      <input type="password" class="form-control newuser" id="newUserPassword">
 						    </div>
 						  </div>					
 					</form>
+
+					<p class="alertUser"></p>
+
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-warning">Submit</button>
+			        <button type="button" id="signupbutton" class="btn btn-warning">Submit</button>
 			      </div>
 			    </div>
 			  </div>
 			</div>			
-<!-- close container -->
+
+<!-- js for user login (needs to be after html to work properlyl) -->
+<script type="text/javascript" src="./js/login.js"></script>
 </body>
 </html>

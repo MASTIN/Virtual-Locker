@@ -173,6 +173,12 @@ footer a:hover {
 	color: #696969;
 }
 
+.alertUser {
+	text-align: right;
+	color: red;
+	font-size: 12px;
+}
+
 /* RESPONSIVE BACKGROUND IMAGE */
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {
