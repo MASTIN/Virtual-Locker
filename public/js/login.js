@@ -3,7 +3,7 @@
         
         event.preventDefault();
 
-        // if all fields are filled
+        // check if all fields are filled
         if ( $("input.newuser").val() ) {
             var userEmail = $("#newUserEmail").val().trim();
             var userPassword = $("#newUserPassword").val().trim();
@@ -17,8 +17,14 @@
             };
             
             // send to the database
-            $.post("/api/user", newUser, function() {
+            $.post("/api/users", newUser, function() {
+
                 alert("New user profile has been added to the database!");
+
+            }).fail(function(data) {
+
+                alert("There was an error creating your user profile.");
+
             });
 
         } else {
@@ -44,8 +50,17 @@
             };
             
             // get the user from the database
-            $.get("/api/user", user, function() {
-                console.log("Successfully signed in.")
+            $.get("/api/users", user)
+
+                .done(function( data ) {
+
+                    console.log("Successfully signed in.")
+                    console.log( "Data Loaded: " + data );
+
+                }).fail(function(data) {
+
+                alert("There was an error locating your user profile.");
+
             });
 
         } else {
