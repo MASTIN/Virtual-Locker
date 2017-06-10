@@ -21,41 +21,13 @@
 </head>
 
 <body>
+
 <!-- FIXED NAVBAR -->
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <!-- <a class="navbar-brand" href="safekeep.html">Safekeeper</a> -->
-    </div>
-
-    <ul class="nav navbar-nav navbar-left">
-        <li><a href="safekeeper.html"><img id="navbarlogo" src="./assets/images/safelogo.png"></a></li>
-	</ul>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="add.html">Add an Item</a></li>
-            <li><a href="inventory.html">View Inventory</a></li>
-            <li><a href="index.html">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+<nav class="fixed-nav-bar">
+  <!-- Fixed navigation bar content -->
+  <a href="safekeeper.html">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
 </nav>
+
 <div class="addWrapper">
 <!-- FORM TO ADD AN ITEM -->
 <div class="container" id="newItemForm">
@@ -152,6 +124,16 @@
 	</div>
 </div>
 </div>
+
+<!-- STICKY FOOTER -->
+<!-- STICKY FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p><a href="https://github.com/MASTIN/Virtual-Locker" target="_blank" >
+        <i class="fa fa-github"></i></a>
+      	</p>
+    </div>    
+</footer>
 
 <script type="text/javascript">
 // ON SUBMIT, CAPTURE FORM INPUT

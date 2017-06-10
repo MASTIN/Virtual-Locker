@@ -61,22 +61,37 @@ button.login:last-child {
 }
 
 /* NAVBAR STYLING */
-.navbar {
-	margin-bottom: 0;
+.fixed-nav-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+ 	height: 65px;
+ 	line-height: 65px;
 	font-family: 'Fjalla One', sans-serif;
-	font-size: 20px;
+	font-size: 22px;
+	background: rgba(169,169,169, .3);
+	color: #E3E1DC;
 }
 
-.dropdown {
-	margin-top: 10px;
+.fixed-nav-bar a {
+	margin-left: 7%;
+	color: #3E3F47;
 }
 
 #navbarlogo {
-	width: 40px;
+	width: 35px;
 	height: auto;
 }
 
 /*TABLE STYLING*/
+#table-container {
+	padding-top: 90px;
+	padding-bottom: 50px;
+
+}
+
 #inventory {
 	border: 5px #8E8671 solid;
 }
@@ -85,12 +100,11 @@ button.login:last-child {
 }
 /*center icons in table*/
 .center-td {
-margin-left: 25%;
-margin-right: 35%;
-width: 40%;
-
-
+	margin-left: 25%;
+	margin-right: 35%;
+	width: 40%;
 }
+
 /* ADD ITEM PAGE STYLING */
 #addHeader {
 	text-align: center;
@@ -107,7 +121,7 @@ width: 40%;
 }
 
 .addWrapper {
-	padding-top: 50px;
+	padding-top: 90px;
 	padding-bottom: 50px;
 	background: url("../images/grey.jpg") no-repeat center center fixed;
 	opacity: .8;
@@ -126,7 +140,7 @@ width: 40%;
 	float: left;
 }
 
-.modal-content {
+.modal-header {
 	font-family: 'Fjalla One', sans-serif;
 }
 
@@ -138,6 +152,25 @@ width: 40%;
 	position: relative;
 	left: 20px;
 	top: 15px;
+}
+
+footer {
+	background: rgba(207, 200, 200, .6) url("../images/grey.jpg") no-repeat center center fixed;
+	color: #696969;
+	font-size: 12px;
+	line-height: 2;
+	border-top: solid 15px rgba(169,169,169, .3);
+	border-bottom: solid 60px rgba(169,169,169, .3);
+	text-align: center;
+}
+
+footer a {
+	color: rgb(169,169,169);
+	font-size: 24px;
+}
+
+footer a:hover {
+	color: #696969;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
