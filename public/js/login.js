@@ -22,6 +22,9 @@
 
                 alert("New user profile has been added to the database!");
 
+                // NEED TO REDIRECT THEM TO MENU PAGE
+                window.location.href = "/menu";
+
             }).fail(function(data) {
 
                 alert("There was an error creating your user profile.");
@@ -58,6 +61,9 @@
 
                     console.log("Successfully signed in.")
                     console.log( "Data Loaded: " + data );
+
+                    // NEED TO REDIRECT THEM TO MENU PAGE
+                    window.location.href = "/menu";
 
                 }).fail(function(data) {
 
