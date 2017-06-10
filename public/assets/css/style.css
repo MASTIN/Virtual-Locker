@@ -115,6 +115,16 @@ button.login:last-child {
 	font-family: 'Fjalla One', sans-serif;
 }
 
+#showUsername {
+	color: orange;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	left: 20px;
+	top: 15px;
+}
+
 /* RESPONSIVE BACKGROUND IMAGE */
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {
