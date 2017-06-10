@@ -17,7 +17,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
 	<!-- CUSTOM JAVASCRIPT -->
-<!-- 	<script src="js/table.js"></script> -->
+	<script src="js/add.js"></script>
 </head>
 
 <body>
@@ -132,31 +132,5 @@
       	</p>
     </div>    
 </footer>
-
-<script>
-// ON SUBMIT, CAPTURE FORM INPUT
-// .serialize() method will capture form input (does not include select elements)
-// For a form element's value to be included in the serialized string, it must have a name attribute.
-  $( "button[type='submit']" ).on( "click", function (event) {
-  	event.preventDefault();
-    var datastring = $( "form" ).serialize();
-    console.log(datastring);
-// POST REQUEST
-	$.ajax({
-	    type: "POST",
-	    url: "your url.php",
-	    data: datastring,
-	    dataType: "json",
-	    success: function(data) {
-	    	// if the dataType is not specified as json uncomment this
-	        var obj = jQuery.parseJSON(data); 
-	        // do what you want with the server response
-	    },
-	    error: function() {
-	        alert('error handing here');
-	    }
-	});
-  });
-</script>
 </body>
 </html>
