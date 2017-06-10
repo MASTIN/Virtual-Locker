@@ -126,7 +126,7 @@ width: 40%;
 	float: left;
 }
 
-.modal-content {
+.modal-header {
 	font-family: 'Fjalla One', sans-serif;
 }
 
@@ -138,6 +138,21 @@ width: 40%;
 	position: relative;
 	left: 20px;
 	top: 15px;
+}
+
+footer {
+	font-family: 'Fjalla One', sans-serif;
+	background: rgba(207, 200, 200, .6);
+	background: url("../images/grey.jpg") no-repeat center center fixed;
+	color: rgba(207, 200, 200);
+}
+
+footer a {
+	color: #E3E1DC;
+}
+
+footer a:hover {
+	color: #3E3F47;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
