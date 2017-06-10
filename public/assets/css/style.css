@@ -15,20 +15,21 @@
 
 /* RESPONSIVE BACKGROUND IMAGE */
 .bgimage {
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
+	z-index: -100;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
 	
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
 	
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
 
-  opacity: .5;
+    opacity: .5;
 }
 
 #headerlogo {
@@ -74,6 +75,12 @@ button.login:last-child {
 .fixed-nav-bar a {
 	margin-left: 7%;
 	color: #3E3F47;
+	/*color: #eb9316;*/
+}
+
+.fixed-nav-bar a:hover {
+	color: #eb9316;
+	text-decoration: none;
 }
 
 #navbarlogo {
