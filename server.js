@@ -17,10 +17,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 //set up static directory for all public files
 app.use(express.static(path.join(__dirname , "public")));
 
-
 //*****ROUTES*****//
 require("./routes/html-routes.js")(app);
-require("./routes/post-routes.js")(app);
+require("./routes/api-item-routes.js")(app);
 
 //sequelize sync models then start express app
 // This we'll use if we need to change the tables
