@@ -45,7 +45,7 @@ $(document).ready(function() {
         objArray.serial_number = data[i].serial_number;
         objArray.image = "<img src='" + data[i].image + "' height='200'>"
         objArray.notes = data[i].notes;
-        objArray.update = "<i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i>";
+        objArray.update = "<a href='edit.html'><i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i></a>";
         objArray.delete = "<i id='deleteMe' value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i>";
 
         // This pushes each new object to an array
