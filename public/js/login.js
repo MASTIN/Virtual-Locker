@@ -55,7 +55,7 @@
             
             // get the user from the database
             // NEED TO USE THIS TO GET INVENTORY TABLE ASSOCIATED WITH THE USER
-            $.get("/api/users", user)
+            $.get("/api/user", user)
 
                 .done(function( data ) {
 

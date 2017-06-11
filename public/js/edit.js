@@ -1,11 +1,8 @@
+//link edit.js to edit.html when ready
 
-// move delete function to inventory.js
-//link edit.js to edit.html
+// This updates an item when the pencil icon on that line is clicked
 
-//keep working on edit later
-    $(".updateItem").click(updateItem);
-
-    function updateItem() {
+$("#inventory").on("click", ".updateItem", function() {
         var id = $(this).data("id");
         $.ajax({
             method: "PUT",
@@ -13,16 +10,6 @@
         }).done(function() {
             
         })
-    };
+});
 
-    function deleteItem() {
-        var id = $(this).data("id");
-        $.ajax({
-        method: "DELETE",
-        url: "/api/inventory/" + id
-    })
-    .done(function() {
-        
-    });
-  };
 

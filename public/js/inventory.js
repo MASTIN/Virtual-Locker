@@ -3,12 +3,11 @@ $(document).ready(function() {
 
     // This deletes a line when the trashcan icon on a line is clicked
     $("#inventory").on("click", ".deleteItem", function() {
-        alert("This will delete the selected item completely. When it's coded correctly");
-    });
-
-    // This updates an item when the pencil icon on that line is clicked
-    $("#inventory").on("click", ".updateItem", function() {
-        alert("This will update the selected item. When it's coded correctly");
+        var id = $(this).data("id");
+        $.ajax({
+            method: "DELETE",
+         url: "/api/inventory/" + id
+        });
     });
 
     /* Formatting function for row details - modify as you need */
