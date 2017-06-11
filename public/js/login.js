@@ -18,7 +18,7 @@
             
             // send to the database
             // NEED TO CREATE AN INVENTORY TABLE FOR THE NEW USER
-            $.post("/api/users", newUser, function() {
+            $.post("/api/user", newUser, function() {
 
                 alert("New user profile has been added to the database!");
 
