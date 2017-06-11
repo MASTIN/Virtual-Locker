@@ -16,7 +16,7 @@
         // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
         var newDatePurchased = $("#date_purchased").val() || "2049-12-31";
         
-        var newPurchasedPrice = $("#purchase_price").val().trim() || 0;
+        var newPurchasePrice = $("#purchase_price").val().trim() || 0;
         var newSerialNumber = $("#serial_number").val().trim();
         var newImage = $("#image").val().trim();
         var newNotes = $("#notes").val().trim();
@@ -35,7 +35,7 @@
             category: newCategory,
             value: newValue,
             date_purchased: newDatePurchased,
-            purchased_price: newPurchasedPrice,
+            purchase_price: newPurchasePrice,
             serial_number: newSerialNumber,
             image: newImage,
             notes: newNotes,
@@ -54,7 +54,7 @@
     // BUT LEAVE THIS FOR NOW
     // This function submits the item to the database
     function submitItem(post) {
-        $.post("/api/item", post, function() {
+        $.post("/api/inventory", post, function() {
             alert("This has been added to the database!");
         });
     }

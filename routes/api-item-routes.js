@@ -19,11 +19,11 @@ module.exports = function(app) {
     });
 
     // POST route for saving a new item
-    app.post("/api/item", function(req, res) {
+    app.post("/api/inventory", function(req, res) {
         console.log("~~~~~~~HERE~~~~~~~~");
         console.log(req.body);
         db.Item.create(req.body).then(function(result) {
-            res.redirect("/add.html");
+            res.redirect("/inventory");
             // res.json(result);
         });
     });
@@ -37,7 +37,7 @@ module.exports = function(app) {
             id: req.body.id
             }
         }).then(function(result) {
-            res.redirect("/inventory.html");
+            res.redirect("/inventory");
         });
     });
 
@@ -48,7 +48,7 @@ module.exports = function(app) {
             id: req.params.id
         }
         }).then(function(result) {
-            res.redirect("/inventory.html");
+            res.redirect("/inventory");
         });
     });
 };
