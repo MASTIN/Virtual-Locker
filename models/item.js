@@ -20,24 +20,24 @@ module.exports = function(sequelize, DataTypes) {
         },
         value: {
             type: DataTypes.DECIMAL,
-            validate: {
-                isDecimal: true,
-                notNull: true
-            }
+            // validate: {
+            //     isDecimal: true,
+            //     notNull: true
+            // }
         },
         date_purchased: {
             type: DataTypes.DATEONLY,
-            validate: {
-                isDate: true,
-                notNull: true
-            }
+            // validate: {
+            //     isDate: true,
+            //     notNull: true
+            // }
         },
         purchase_price: {
             type: DataTypes.DECIMAL,
-            validate: {
-                isDecimal: true,
-                notNull: true
-            }
+            // validate: {
+            //     isDecimal: true,
+            //     notNull: true
+            // }
         },
         serial_number: {
             type: DataTypes.STRING,
