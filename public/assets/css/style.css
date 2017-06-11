@@ -188,3 +188,12 @@ footer a:hover {
     margin-left: -512px;   /* 50% */
   }
 }
+
+td.details-control {
+    background: url('../images/images.png') no-repeat center center;
+	background-size: 110%;
+}
+tr.shown td.details-control {
+    background: url('../images/gobackarrow.png') no-repeat center center;
+	background-size: 110%;
+}
