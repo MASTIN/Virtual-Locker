@@ -1,8 +1,8 @@
 /* USED TO VERTICALLY AND HORIZONTALLY CENTER CONTENT */
 .centerContentParent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* USED TO VERTICALLY AND HORIZONTALLY CENTER CONTENT */
@@ -98,7 +98,7 @@ button.login:last-child {
 	border: 5px #8E8671 solid;
 }
 #inventory thead, tfoot {
-	background-color: #BDBDC0; 	
+	background-color: #D4D4D4; 	
 }
 /*center icons in table*/
 .center-td {
@@ -177,7 +177,7 @@ footer a:hover {
 
 .alertUser {
 	text-align: right;
-	color: red;
+	color: #FF5719;
 	font-size: 12px;
 }
 
