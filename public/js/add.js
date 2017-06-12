@@ -23,8 +23,16 @@
         var userEntered = 3;
 
         // This checks to make sure these fields are not empty
-        if (!newItemName || !newLocation || newCategory === "Category") {
-            $(".alertUser").text("Item Name, Location and Category are required fields.");
+         if (!newItemName) {
+            $(".alertUser").text("Please enter an item name.");
+            return;
+        } 
+         if (!newLocation) {
+            $(".alertUser").text("Please enter a location.");
+            return;
+        }
+         if (newCategory === "Category") {
+            $(".alertUser").text("Please choose a category.");
             return;
         }
 

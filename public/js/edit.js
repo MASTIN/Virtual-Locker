@@ -39,8 +39,16 @@ $(document).ready(function() {
         var userEntered = 3;
 
         // This checks to make sure these fields are not empty
-        if (!editedItemName || !editedLocation || editedCategory === "Category") {
-            $(".alertUser").text("Item Name, Location and Category are required fields.");
+        if (!editedItemName) {
+            $(".alertUser").text("Please enter an item name.");
+            return;
+        } 
+         if (!editedLocation) {
+            $(".alertUser").text("Please enter a location.");
+            return;
+        }
+         if (editedCategory === "Category") {
+            $(".alertUser").text("Please choose a category.");
             return;
         }
 
