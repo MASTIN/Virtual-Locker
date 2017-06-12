@@ -18,7 +18,7 @@ module.exports = function(app) {
         });
     });
 
-    // Get rotue for retrieving a single item
+    // GET route for retrieving a single item
     app.get("/api/inventory/:id", function(req, res) {
         db.Item.findOne({
             where: {
@@ -55,8 +55,6 @@ module.exports = function(app) {
         where: {
             id: req.params.id
         }
-        }).then(function(result) {
-            res.redirect("/inventory");
         });
     });
 };
