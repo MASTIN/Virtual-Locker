@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    event.preventDefault();
 
     // This pulls the info from sessionstorage to auto-fill the page with current values
     var itemBeingEdited = JSON.parse(sessionStorage.getItem("itemtoEdit"));
-    
+    console.log(itemBeingEdited);
+
     $("#item_name").val(itemBeingEdited.item_name);
     $("#location").val(itemBeingEdited.location);
     $("#category").val(itemBeingEdited.category);
@@ -16,6 +16,8 @@ $(document).ready(function() {
 
     // When the user enters the submit button, this will grab the values
     $("#editedItem").on("click", function(event) {
+        event.preventDefault();
+       
         var editedItemName = $("#item_name").val().trim();
         var editedLocation = $("#location").val().trim();
         var editedCategory = $("#category").val();
@@ -44,6 +46,7 @@ $(document).ready(function() {
 
         // This will create a new object to go into the database
         var itemChanged = {
+            id: itemBeingEdited.id,
             item_name: editedItemName,
             location: editedLocation,
             category: editedCategory,
@@ -65,26 +68,17 @@ $(document).ready(function() {
     // THIS DOES NOT WORK YET.
     // This updates the post to the database and returns the user to the inventory page
     function submitEditedItem(itemChanged) {
-        // $.post("/api/inventory/", itemChanged, function() {
-            
-        // }).done(function() {
-        //     alert("This has been updated to the database!");
-        //     // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
-        //     location.href = "/inventory";
-        // });
-
-        console.log(req.body);
-
-        //     $.ajax({
-        //         method: "PUT",
-        //         url: "/api/inventory",
-        //         data: itemChanged
-        //     }).done(function() {
+        
+            $.ajax({
+                method: "PUT",
+                url: "/api/inventory",
+                data: itemChanged
+            }).done(function() {
                 
-        // });
-        //     alert("This has been updated to the database!");
-        //     // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
-        //     location.href = "/inventory.html";
+        });
+            alert("This has been updated to the database!");
+            // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
+            location.href = "/inventory.html";
     }
     
 });
