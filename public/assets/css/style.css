@@ -181,6 +181,11 @@ footer a:hover {
 	font-size: 12px;
 }
 
+.tableImage {
+	max-height: 200px;
+	float: right;
+}
+
 /* RESPONSIVE BACKGROUND IMAGE */
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {

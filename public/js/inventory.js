@@ -19,7 +19,7 @@ $(document).ready(function() {
                 '<td>'+data.notes+'</td>'+
             '</tr>'+
             '<tr>'+
-                '<td>Image:</td>'+
+                '<td>Image:</td>'+"<br>"+
                 '<td>'+data.image+'</td>'+
             '</tr>'+
         '</table>';
@@ -43,7 +43,7 @@ $(document).ready(function() {
         objArray.date_purchased = moment(data[i].date_purchased).format("L");
         objArray.purchase_price = "$" + data[i].purchase_price.toLocaleString();
         objArray.serial_number = data[i].serial_number;
-        objArray.image = "<img src='" + data[i].image + "' max-height='200'>"
+        objArray.image = "<img class='tableImage' src='" + data[i].image + "'/>"
         objArray.notes = data[i].notes;
         objArray.update = "<a href='edit.html'><i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i></a>";
         objArray.delete = "<i id='deleteMe' value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i>";
