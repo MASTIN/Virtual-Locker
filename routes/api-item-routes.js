@@ -31,9 +31,10 @@ module.exports = function(app) {
 
     // POST route for saving a new item
     app.post("/api/inventory", function(req, res) {
-        db.Item.create(req.body).then(function(result) {
-            res.redirect("/inventory");
-        });
+        db.Item.create(req.body)
+        // .then(function(result) {
+            // res.redirect("/inventory");
+        // });
     });
 
     // PUT route for updating an item
