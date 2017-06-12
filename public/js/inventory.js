@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    event.preventDefault();
 
     // This deletes a line when the trashcan icon on a line is clicked
     $("#inventory").on("click", ".deleteItem", function() {
@@ -10,19 +9,13 @@ $(document).ready(function() {
         });
     });
 
-    /* Formatting function for row details - modify as you need */
+    /* Formatting function for row details */
     function format (data) {
-        // `d` is the original data object for the row
-        return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-            '<tr>'+
-                '<td>Notes:</td>'+
-                '<td>'+data.notes+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Image:</td>'+"<br>"+
-                '<td>'+data.image+'</td>'+
-            '</tr>'+
-        '</table>';
+
+        var itemDetails = "<div class='row'>";
+        itemDetails += "<div class='col-md-6'><h5>Notes:<h5><p>" + data.notes + "</p>";
+        itemDetails += "<div class='col-md-6'>" + data.image + "</div></div>";
+        return itemDetails;
     }
  
     $.get("/api/inventory", createDataArray);
@@ -64,7 +57,7 @@ $(document).ready(function() {
                     "className": 'details-control',
                     "orderable": false,
                     "data": null,
-                    "defaultContent": ''
+                    "defaultContent": ""
                 },
                 { 
                     "data": "item_name",

@@ -107,12 +107,13 @@ button.login:last-child {
 	width: 40%;
 }
 
-.updateItem {
+.updateItem, .deleteItem {
 	color: #3E3F47;
+	text-align: center;
 }
 
-.deleteItem {
-	color: #3E3F47;
+th {
+	text-align: center;
 }
 
 /* ADD ITEM PAGE STYLING */
@@ -198,6 +199,7 @@ td.details-control {
     background: url('../images/expand-button.png') no-repeat center center;
 	background-size: 80%;
 }
+
 tr.shown td.details-control {
     background: url('../images/expand-arrow.png') no-repeat center center;
 	background-size: 80%;
