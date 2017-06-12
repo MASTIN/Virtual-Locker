@@ -40,7 +40,7 @@ $(document).ready(function() {
 
         // This checks to make sure these fields are not empty
         if (!editedItemName || !editedLocation || editedCategory === "Category") {
-            alert("Please make sure you fill in something for Name, Location, and Category");
+            $(".alertUser").text("Item Name, Location and Category are required fields.");
             return;
         }
 
@@ -76,7 +76,6 @@ $(document).ready(function() {
             }).done(function() {
                 
         });
-            alert("This has been updated to the database!");
             // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
             location.href = "/inventory.html";
     }

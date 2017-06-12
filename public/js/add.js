@@ -24,7 +24,7 @@
 
         // This checks to make sure these fields are not empty
         if (!newItemName || !newLocation || newCategory === "Category") {
-            alert("Please make sure you fill in something for Name, Location, and Category");
+            $(".alertUser").text("Item Name, Location and Category are required fields.");
             return;
         }
 
@@ -53,6 +53,5 @@
     function submitItem(newItem) {
         $.post("/api/inventory", newItem, function() { 
         });
-        alert("This has been added to the database!");
-            location.href = "/inventory.html";
+        location.href = "/inventory.html";
     }
