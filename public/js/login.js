@@ -1,3 +1,7 @@
+$(function() {
+
+    var displayname = "test";
+
     // This runs when a new user signs up
     $("#signupbutton").on("click", function(event) {
         
@@ -16,15 +20,16 @@
                 email: userEmail,
                 password: userPassword,
             };
+
+            console.log(newUser);
             
             // send to the database
             // NEED TO CREATE AN INVENTORY TABLE FOR THE NEW USER
-            $.post("/api/user", newUser, function() {
+            $.post("/api/user/" + newUser.name, newUser, function() {
 
-                alert("New user profile has been added to the database!");
+                displayname = newUser.name + "\'s";
 
-                // NEED TO REDIRECT THEM TO MENU PAGE
-                window.location.href = "/menu";
+                alert(displayname + " profile has been added to the database!");                
 
             }).fail(function(data) {
 
@@ -45,7 +50,7 @@
 
         // if all fields are filled
         if ( $("input.existinguser").val() ) {
-            
+
             var userEmail = $("#userEmail").val().trim();
             var userPassword = $("#userPassword").val().trim();
 
@@ -78,3 +83,5 @@
         }
     
     });
+
+});

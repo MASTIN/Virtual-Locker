@@ -25,8 +25,9 @@ module.exports = function(app) {
     app.get("/edit", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/edit.html"));
     }); 
+    
     // Route for main/home page - last so /anything else will load home page
-    // app.get("/*", function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/index.html"));
-    // });  
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });  
 }

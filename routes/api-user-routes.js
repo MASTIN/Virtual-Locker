@@ -3,18 +3,20 @@ var db = require("../models");
 module.exports = function(app) {
 
     // POST route for creating a new user
-    app.post("api/user", function(req, res) {
+    app.post("/api/user/:name?", function(req, res) {
 
-        db.User.create(req.body).then(function(result){
+        var name = req.params.name;
 
-            res.json(result);
-            res.redirect("/menu.html");
+        db.User.create(req.body).then(function(result) {
+
+            // res.json(result);
+            res.redirect("/menu");
         });
     });
 
     // GET route for finding a user and their password
     // how to handle if password/email don't match
-    app.get("api/user", function(req, res) {
+    app.get("/api/user", function(req, res) {
 
         db.User.findOne({
 
@@ -31,7 +33,7 @@ module.exports = function(app) {
                 return "Email or password was incorrect.";
             } else { 
                 res.json(result);
-                res.redirect("/inventory.html");
+                res.redirect("/inventory");
             }
         });
     });
