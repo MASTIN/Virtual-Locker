@@ -18,8 +18,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+	<!-- Link to Moment.js should go here -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 	<!-- CUSTOM JAVASCRIPT -->
-<!-- 	<script src="js/edit.js"></script> -->
+ 	<script src="js/edit.js"></script> 
 </head>
 
 <body>
@@ -111,14 +113,14 @@
 		  <div class="form-group">
 		    <label for="input_notes" class="col-sm-3 control-label" id="notes">Notes</label>
 		    <div class="col-sm-9">
-		      <textarea class="form-control" rows="3"></textarea>
+		      <textarea class="form-control" id="loadNotes" rows="3"></textarea>
 		      <!-- <input type="text" class="form-control" id="input_notes" placeholder="notes"> -->
 		    </div>
 		  </div>
 
 		  <div class="form-group">
 		    <div class="col-sm-offset-3 col-sm-9">
-		      <button type="submit" class="btn btn-warning" id="newItem">Save Changes</button>
+		      <button type="submit" class="btn btn-warning" id="editedItem">Save Changes</button>
 		    </div>
 		  </div>
 		</form>

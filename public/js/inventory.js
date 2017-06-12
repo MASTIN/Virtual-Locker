@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // This deletes a line when the trashcan icon on a line is clicked
     $("#inventory").on("click", ".deleteItem", function() {
-        var id = $(this).data("id");
+         var id = $(this).attr('value');
         $.ajax({
             method: "DELETE",
             url: "/api/inventory/" + id
@@ -38,7 +38,7 @@ $(document).ready(function() {
         objArray.serial_number = data[i].serial_number;
         objArray.image = "<img class='tableImage' src='" + data[i].image + "'/>"
         objArray.notes = data[i].notes;
-        objArray.update = "<a href='edit.html'><i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i></a>";
+        objArray.update = "<i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i>";
         objArray.delete = "<a href='#'><i id='deleteMe' value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i></a>";
 
         // This pushes each new object to an array
@@ -101,6 +101,21 @@ $(document).ready(function() {
         });
     }
 
+    // This will get the info of the item that was clicked and save to session storage
+    // to be used by edit.js & edit.html page
+    $("#inventory").on("click", ".updateItem", function() {
+        var id = $(this).attr('value');
 
+         $.get("/api/inventory", editItem);
+
+         function editItem(data) {
+            sessionStorage.setItem("itemtoEdit", JSON.stringify(data[id]));
+            gotoEditPage();
+         }
+        
+        function gotoEditPage() {
+            location.href = "/edit";
+        }
+    });
 
 });

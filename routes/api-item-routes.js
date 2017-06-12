@@ -18,6 +18,17 @@ module.exports = function(app) {
         });
     });
 
+    // Get rotue for retrieving a single item
+    app.get("/api/inventory/:id", function(req, res) {
+        db.Item.findOne({
+            where: {
+            id: req.params.id
+        }
+        }).then(function(dbPost) {
+        res.json(dbPost);
+        });
+    });
+
     // POST route for saving a new item
     app.post("/api/inventory", function(req, res) {
         console.log("~~~~~~~HERE~~~~~~~~");
@@ -30,14 +41,15 @@ module.exports = function(app) {
 
     // PUT route for updating an item
     app.put("/api/inventory", function(req, res) {
+        console.log(req.body.id);
         db.Item.update(
         req.body,
         {
             where: {
-            id: req.body.id
+            id: 3
             }
         }).then(function(result) {
-            res.redirect("/inventory");
+            res.redirect("/inventory.html");
         });
     });
 
