@@ -66,13 +66,25 @@ $(document).ready(function() {
                     "data": null,
                     "defaultContent": ''
                 },
-                { "data": "item_name" },
-                { "data": "location" },
-                { "data": "category" },
+                { 
+                    "data": "item_name",
+                    "width": "150px" 
+                },
+                { 
+                    "data": "location",
+                    "width": "150px" 
+                },
+                { 
+                    "data": "category",
+                    "width": "150px"
+                },
                 { "data": "value" },
                 { "data": "date_purchased" },
                 { "data": "purchase_price" },
-                { "data": "serial_number" },
+                { 
+                    "data": "serial_number",
+                    "width": "150px" 
+                },
                 { "data": "update" },
                 { "data": "delete" }
             ],

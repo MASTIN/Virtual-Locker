@@ -95,7 +95,7 @@ button.login:last-child {
 }
 
 #inventory {
-	border: 5px #8E8671 solid;
+	border: 5px #EBEBEC solid;
 }
 #inventory thead, tfoot {
 	background-color: #D4D4D4; 	
@@ -105,6 +105,14 @@ button.login:last-child {
 	margin-left: 25%;
 	margin-right: 35%;
 	width: 40%;
+}
+
+.updateItem {
+	color: #3E3F47;
+}
+
+.deleteItem {
+	color: #3E3F47;
 }
 
 /* ADD ITEM PAGE STYLING */
