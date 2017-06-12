@@ -51,7 +51,8 @@
 
     // This function submits the item to the database
     function submitItem(newItem) {
-        $.post("/api/inventory", newItem, function() {
-            alert("This has been added to the database!");
+        $.post("/api/inventory", newItem, function() { 
         });
+        alert("This has been added to the database!");
+            location.href = "/inventory.html";
     }
