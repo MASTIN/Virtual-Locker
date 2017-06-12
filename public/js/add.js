@@ -45,16 +45,13 @@
             // NEEDS FIXING - identify the UserID
             UserId: 3
         };
-        // THIS IS COMMENTED OUT B/C INDIA IS WORKING ON A BETTER SOLUTION ON THE ADD.HTML PAGE
-        // BUT LEAVE THIS FOR NOW
+
         submitItem(newItem);
     });
 
-    // THIS IS COMMENTED OUT B/C INDIA IS WORKING ON A BETTER SOLUTION ON THE ADD.HTML PAGE
-    // BUT LEAVE THIS FOR NOW
     // This function submits the item to the database
-    function submitItem(post) {
-        $.post("/api/inventory", post, function() {
+    function submitItem(newItem) {
+        $.post("/api/inventory", newItem, function() {
             alert("This has been added to the database!");
             // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
             location.href = "/inventory";

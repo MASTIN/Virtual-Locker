@@ -17,7 +17,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
-
 </head>
 <body>	
 	<!-- BACKGROUND IMAGE -->
@@ -42,20 +41,18 @@
 	</div>
 
 </div>
+	<!-- CUSTOM JAVASCRIPT -->
+	<script src="js/menu.js"></script>
 
-<script type="text/javascript">
-	// when button is clicked, routes user to corresponding page
-	$("#invButton").click(function () {
-        location.href = "/inventory";
-    });
-	$("#addButton").click (function () {
-        location.href = "/add";
-    });
+<!-- still working on displaying user's name -->
+<!-- 	<script type="text/javascript">
+	    
+		$.get("/api/user/" + name, function(data) {
 
-	var user = $("#showUsername");
-	// NEED TO GET CURRENT USER'S NAME FROM THE DATABASE
+			if (data) $("#showUsername").text(data.name);
 
-</script>
-
+			else $("#showUsername").hide();
+		});
+	</script> -->
 </body>
 </html>

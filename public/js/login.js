@@ -1,3 +1,7 @@
+$(function() {
+
+    var displayname = "test";
+
     // This runs when a new user signs up
     $("#signupbutton").on("click", function(event) {
         
@@ -5,6 +9,7 @@
 
         // check if all fields are filled
         if ( $("input.newuser").val() ) {
+
             var userEmail = $("#newUserEmail").val().trim();
             var userPassword = $("#newUserPassword").val().trim();
             var userName = $("#newUserName").val().trim();
@@ -15,15 +20,16 @@
                 email: userEmail,
                 password: userPassword,
             };
+
+            console.log(newUser);
             
             // send to the database
             // NEED TO CREATE AN INVENTORY TABLE FOR THE NEW USER
-            $.post("/api/user", newUser, function() {
+            $.post("/api/user/" + newUser.name, newUser, function() {
 
-                alert("New user profile has been added to the database!");
+                displayname = newUser.name + "\'s";
 
-                // NEED TO REDIRECT THEM TO MENU PAGE
-                window.location.href = "/menu";
+                alert(displayname + " profile has been added to the database!");                
 
             }).fail(function(data) {
 
@@ -44,17 +50,18 @@
 
         // if all fields are filled
         if ( $("input.existinguser").val() ) {
+
             var userEmail = $("#userEmail").val().trim();
             var userPassword = $("#userPassword").val().trim();
 
-            // for filtering through the user table
+            // for the get request to find user in the database
             var user = {
                 email: userEmail,
                 password: userPassword,
             };
             
             // get the user from the database
-            // NEED TO USE THIS TO GET INVENTORY TABLE ASSOCIATED WITH THE USER
+            // then we can get all associated items for that user
             $.get("/api/user", user)
 
                 .done(function( data ) {
@@ -76,3 +83,5 @@
         }
     
     });
+
+});
