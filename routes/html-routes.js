@@ -3,9 +3,11 @@ var db = require("../models");
 var path = require("path");
 
 module.exports = function(app) {
-
+    // Route for main/home page - last so /anything else will load home page
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });  
  
-
     // Route for menu to ask user to either add new item or view their locker
     app.get("/menu", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/menu.html"));
@@ -25,9 +27,4 @@ module.exports = function(app) {
     app.get("/edit", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/edit.html"));
     }); 
-    
-    // Route for main/home page - last so /anything else will load home page
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"));
-    });  
 }

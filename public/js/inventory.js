@@ -1,14 +1,5 @@
 $(document).ready(function() {
 
-    // This deletes a line when the trashcan icon on a line is clicked
-    $("#inventory").on("click", ".deleteItem", function() {
-         var id = $(this).attr('value');
-        $.ajax({
-            method: "DELETE",
-            url: "/api/inventory/" + id
-        });
-    });
-
     /* Formatting function for row details */
     function format (data) {
 
@@ -17,8 +8,9 @@ $(document).ready(function() {
         itemDetails += "<div class='col-md-6'>" + data.image + "</div></div>";
         return itemDetails;
     }
- 
+    
     $.get("/api/inventory", createDataArray);
+
     var arrayofItems = [];
     
     // This will create the array of objects
@@ -39,7 +31,10 @@ $(document).ready(function() {
         objArray.image = "<img class='tableImage' src='" + data[i].image + "'/>"
         objArray.notes = data[i].notes;
         objArray.update = "<i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i>";
-        objArray.delete = "<a href='#'><i id='deleteMe' value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i></a>";
+        
+        //changed value to id from DB not array index - was not deleting correct items
+        //did the same to update object but screwed up all Stuart's stuff so put it back
+        objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i></a>";
 
         // This pushes each new object to an array
         arrayofItems.push(objArray);
@@ -106,9 +101,9 @@ $(document).ready(function() {
     $("#inventory").on("click", ".updateItem", function() {
         var id = $(this).attr('value');
 
-         $.get("/api/inventory", editItem);
+        $.get("/api/inventory", editItem);
 
-         function editItem(data) {
+        function editItem(data) {
             sessionStorage.setItem("itemtoEdit", JSON.stringify(data[id]));
             gotoEditPage();
          }
@@ -118,4 +113,16 @@ $(document).ready(function() {
         }
     });
 
+     // This deletes a line when the trashcan icon on a line is clicked
+    $("#inventory").on("click", ".deleteItem", function() {
+        console.log($(this).attr('value'));
+        var id = $(this).attr('value');
+        $.ajax({
+            method: "DELETE",
+            url: "/api/inventory/" + id
+
+        });
+        location.reload();
+    });
+        
 });
