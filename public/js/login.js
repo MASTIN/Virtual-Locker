@@ -18,7 +18,7 @@
             
             // send to the database
             // NEED TO CREATE AN INVENTORY TABLE FOR THE NEW USER
-            $.post("/api/users", newUser, function() {
+            $.post("/api/user", newUser, function() {
 
                 alert("New user profile has been added to the database!");
 
@@ -55,7 +55,7 @@
             
             // get the user from the database
             // NEED TO USE THIS TO GET INVENTORY TABLE ASSOCIATED WITH THE USER
-            $.get("/api/users", user)
+            $.get("/api/user", user)
 
                 .done(function( data ) {
 

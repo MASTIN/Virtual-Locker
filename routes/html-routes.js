@@ -4,14 +4,11 @@ var path = require("path");
 
 module.exports = function(app) {
 
-    // Route for main/home page
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"));
-    });   
+ 
 
     // Route for menu to ask user to either add new item or view their locker
-    app.get("/locker", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/locker.html"));
+    app.get("/menu", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/menu.html"));
     });
 
     // Route for viewing all items in your locker
@@ -28,5 +25,8 @@ module.exports = function(app) {
     app.get("/edit", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/edit.html"));
     }); 
-
+    // Route for main/home page - last so /anything else will load home page
+    app.get("/*", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });  
 }
