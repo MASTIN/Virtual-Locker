@@ -6,7 +6,7 @@ $(document).ready(function() {
         var id = $(this).data("id");
         $.ajax({
             method: "DELETE",
-         url: "/api/inventory/" + id
+            url: "/api/inventory/" + id
         });
     });
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
         objArray.image = "<img class='tableImage' src='" + data[i].image + "'/>"
         objArray.notes = data[i].notes;
         objArray.update = "<a href='edit.html'><i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i></a>";
-        objArray.delete = "<i id='deleteMe' value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i>";
+        objArray.delete = "<a href='#'><i id='deleteMe' value='" + i + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i></a>";
 
         // This pushes each new object to an array
         arrayofItems.push(objArray);
