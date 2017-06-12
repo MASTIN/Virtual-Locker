@@ -53,7 +53,5 @@
     function submitItem(newItem) {
         $.post("/api/inventory", newItem, function() {
             alert("This has been added to the database!");
-            // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
-            location.href = "/inventory";
         });
     }

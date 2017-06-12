@@ -31,25 +31,21 @@ module.exports = function(app) {
 
     // POST route for saving a new item
     app.post("/api/inventory", function(req, res) {
-        console.log("~~~~~~~HERE~~~~~~~~");
-        console.log(req.body);
         db.Item.create(req.body).then(function(result) {
             res.redirect("/inventory");
-            // res.json(result);
         });
     });
 
     // PUT route for updating an item
     app.put("/api/inventory", function(req, res) {
-        console.log(req.body.id);
         db.Item.update(
         req.body,
         {
             where: {
-            id: 3
+            id: req.body.id
             }
         }).then(function(result) {
-            res.redirect("/inventory.html");
+            // res.redirect("/inventory");
         });
     });
 
