@@ -14,10 +14,28 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/user", function(req, res) {
+        db.User.findAll({
+        }).then(function(results) { 
+            // console.log(results);  
+            res.json(results);
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
     // GET route for finding a user and their password
     // how to handle if password/email don't match
     app.get("/api/user", function(req, res) {
-
+        console.log(req.body);
         db.User.findOne({
 
         where: {
