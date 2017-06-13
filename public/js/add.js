@@ -23,8 +23,16 @@
         var userEntered = 3;
 
         // This checks to make sure these fields are not empty
-        if (!newItemName || !newLocation || newCategory === "Category") {
-            alert("Please make sure you fill in something for Name, Location, and Category");
+         if (!newItemName) {
+            $(".alertUser").text("Please enter an item name.");
+            return;
+        } 
+         if (!newLocation) {
+            $(".alertUser").text("Please enter a location.");
+            return;
+        }
+         if (newCategory === "Category") {
+            $(".alertUser").text("Please choose a category.");
             return;
         }
 
@@ -53,6 +61,5 @@
     function submitItem(newItem) {
         $.post("/api/inventory", newItem, function() { 
         });
-        alert("This has been added to the database!");
-            location.href = "/inventory.html";
+        location.href = "/inventory.html";
     }

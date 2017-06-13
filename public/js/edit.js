@@ -39,8 +39,16 @@ $(document).ready(function() {
         var userEntered = 3;
 
         // This checks to make sure these fields are not empty
-        if (!editedItemName || !editedLocation || editedCategory === "Category") {
-            alert("Please make sure you fill in something for Name, Location, and Category");
+        if (!editedItemName) {
+            $(".alertUser").text("Please enter an item name.");
+            return;
+        } 
+         if (!editedLocation) {
+            $(".alertUser").text("Please enter a location.");
+            return;
+        }
+         if (editedCategory === "Category") {
+            $(".alertUser").text("Please choose a category.");
             return;
         }
 
@@ -76,7 +84,6 @@ $(document).ready(function() {
             }).done(function() {
                 
         });
-            alert("This has been updated to the database!");
             // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
             location.href = "/inventory.html";
     }
