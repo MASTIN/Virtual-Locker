@@ -156,7 +156,7 @@ th {
 }
 
 #showUsername {
-	color: orange;
+	color: #eb9316;
 	text-align: left;
 	padding: 0;
 	margin: 0;
@@ -186,7 +186,7 @@ footer a:hover {
 
 .alertUser {
 	text-align: right;
-	color: #FF5719;
+	color: #eb9316;
 	font-size: 12px;
 }
 

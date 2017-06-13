@@ -6,22 +6,15 @@ module.exports = function(sequelize, DataTypes) {
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
-            //validate for email
-            // validate: {
-            //     isEmail: true
-            // }
+            allowNull: false
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false,
-            //validate for password requirements 
-            validate: {
-               len:[4,20]
-            }
+            allowNull: false
         }
     },
-        { //User has many Items
+    //USERS TO ITEMS ASSOCIATION- Each user has many Items
+        { 
             classMethods: {
                 associate: function(models) {
                     User.hasMany(models.Item, {

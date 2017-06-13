@@ -9,14 +9,14 @@
         // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
         // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
         // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
-        var newValue = $("#value").val() || 0;
+        var newValue = $("#value").val();
         
         // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
         // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
         // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
-        var newDatePurchased = $("#date_purchased").val() || "2049-12-31";
+        var newDatePurchased = $("#date_purchased").val();
         
-        var newPurchasePrice = $("#purchase_price").val().trim() || 0;
+        var newPurchasePrice = $("#purchase_price").val().trim();
         var newSerialNumber = $("#serial_number").val().trim();
         var newImage = $("#image").val().trim();
         var newNotes = $("#notes").val().trim();
