@@ -95,11 +95,8 @@ $(function() {
                 window.location.href = "/menu";
 
             }).fail(function(data) {
-
-            alert("There was an error locating your user profile.");
-
+                alert("There was an error locating your user profile.");
             });
-
         } else {
             $(".alertUser").text("Please fill all required fields.");
         }   
