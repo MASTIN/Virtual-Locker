@@ -32,49 +32,49 @@
 
 </head>
 <body>
-<!-- FIXED NAVBAR -->
-<nav class="fixed-nav-bar">
-  <a href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
-</nav>
+	<!-- FIXED NAVBAR -->
+	<nav class="fixed-nav-bar">
+	<a href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
+	</nav>
 
-<!-- BACKGROUND IMAGE -->
-<img class="bgimage" src="./assets/images/grey.jpg">
+	<!-- BACKGROUND IMAGE -->
+	<img class="bgimage" src="./assets/images/grey.jpg">
 
-<div class="container">
+	<div class="container">
+		<!-- DATABLE -->
+		<div id= "table-container">
+			<h1><span id="theUsersName"></span>'s Inventory</h1>
+			<table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
+				<thead>
+				<tr>
+					<th></th>
+					<th>Item <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+					<th>Location <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+					<th>Category <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+					<th>Value <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+					<th>Purchase<br>Date <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+					<th>Purchase<br>Price <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+					<th>Serial<br>Number</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+				</thead>
 
-	<div id= "table-container">
-		<h1><span id="theUsersName"></span>'s Inventory</h1>
-		  <table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
-		    <thead>
-		      <tr>
-				<th></th>
-		        <th>Item <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-		        <th>Location <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-		        <th>Category <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-		        <th>Value <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-		        <th>Purchase<br>Date <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-		        <th>Purchase<br>Price <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-		        <th>Serial<br>Number</th>
-				<th>Update</th>
-				<th>Delete</th>
-		      </tr>
-		    </thead>
-
-		    <tbody>
-					
-		    </tbody>
-		  </table>
+				<tbody>
+					<!--table rows inserted here from inventory.js-->	
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div>
 
-<!-- STICKY FOOTER -->
-<footer class="footer">
-    <div class="container">
-        <p><a href="https://github.com/MASTIN/Virtual-Locker" target="_blank" >
-        <i class="fa fa-github"></i></a>
-      	</p>
-    </div>    
-</footer>
+	<!-- STICKY FOOTER -->
+	<footer class="footer">
+		<div class="container">
+			<p><a href="https://github.com/MASTIN/Virtual-Locker" target="_blank" >
+			<i class="fa fa-github"></i></a>
+			</p>
+		</div>    
+	</footer>
 
 </body>
 </html>
