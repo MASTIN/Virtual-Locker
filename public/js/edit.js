@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     /////**********FUNCTIONS**********/////
 
-    // Updates the post to the database
+    //Update the post to the database
     function submitEditedItem(itemChanged) { 
         $.ajax({
             method: "PUT",
@@ -10,7 +10,7 @@ $(document).ready(function() {
             data: itemChanged
         });
         //return user to inventory page
-        // This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
+        // NEEDS FIXING - This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
         location.href = "/inventory.html";
     }   
 
@@ -35,7 +35,7 @@ $(document).ready(function() {
         var editedNotes = $("#loadNotes").val().trim();
         var userEntered = 3;
 
-        // Checks to make sure these fields are not empty
+        //Check to make sure these fields are not empty
         if (!editedItemName) {
             $(".alertUser").text("Please enter an item name.");
             return;
@@ -49,7 +49,7 @@ $(document).ready(function() {
             return;
         }
 
-        // Create a new object to go into the database
+        //Create a new object to go into the database
         var itemChanged = {
             id: itemBeingEdited.id,
             item_name: editedItemName,
@@ -63,8 +63,6 @@ $(document).ready(function() {
             notes: editedNotes,
             
             // NEEDS FIXING - identify the UserID
-            // NEEDS FIXING - identify the UserID
-            // NEEDS FIXING - identify the UserID
             UserId: 3
         };
         submitEditedItem(itemChanged)
@@ -72,7 +70,7 @@ $(document).ready(function() {
 
     /////**********ON PAGE LOAD**********/////
 
-    // Pulls the info from sessionstorage to auto-fill the page with current values
+    //Pull the info from sessionstorage to display existing values in edit form
     var itemBeingEdited = JSON.parse(sessionStorage.getItem("itemtoEdit"));
     console.log(itemBeingEdited);
 

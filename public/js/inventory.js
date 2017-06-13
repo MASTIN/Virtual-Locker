@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     /////**********GLOBAL VARIABLES***********/////
 
     //Get user info from local storage
