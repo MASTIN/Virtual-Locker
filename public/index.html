@@ -12,8 +12,10 @@
 	<link rel="icon" href="assets/images/safelogo.png" type="image/png" sizes="16x16">
 	<!-- FONT AWESOME -->
 	<script src="https://use.fontawesome.com/feca357678.js"></script>
+	<!-- Link for shine.js script -->
+	<script src="js/shine.min.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
@@ -25,8 +27,12 @@
 		<div class="centerContentParent">
 			<div class="centerContentChild">
 				<!-- HEADER -->
-				<h1 id="landingPageHeader">SafeKeeper
-				<img id="headerlogo" src="./assets/images/safelogo.png"></h1>
+				<h1>
+					<span id="landingPageHeader" class="shine large light shine-text-color">SafeKeeper</span>
+					<span id="logoshadow">
+						<img id="headerlogo" src="./assets/images/safelogo.png">
+					</span>
+				</h1>
 				<!-- LOGIN BUTTONS -->
 				<div id="loginButtons">
 					<button type="button" class="login btn col-sm-5 btn-warning" data-toggle="modal" data-target="#signupModal">Sign Up  <i class="fa fa-user"></i></button>
