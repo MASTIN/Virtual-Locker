@@ -155,7 +155,7 @@ th {
 	font-family: 'Fjalla One', sans-serif;
 }
 
-#showUsername {
+.showUsername {
 	color: orange;
 	text-align: left;
 	padding: 0;
