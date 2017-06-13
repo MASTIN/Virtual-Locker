@@ -1,20 +1,34 @@
 $(function() {
 
+    /////**********GLOBAL VARIABLES**********/////
     var displayname = "test";
 
-    // This runs when a new user signs up
+    /////**********FUNCTIONS**********/////
+
+    //Save the current user to localStorage for use on other pages
+    function getUserIds(data) {
+        var userLoggedInId = (data[(data.length - 1)].id);
+        var userLoggedInName = (data[(data.length - 1)].name)
+        localStorage.setItem("userId", userLoggedInId);
+        localStorage.setItem("userName", userLoggedInName);
+        location.href = "/menu";
+    }
+
+    /////**********EVENT LISTENERS**********/////
+
+    //Sign Up
     $("#signupbutton").on("click", function(event) {
         
         event.preventDefault();
 
-        // check if all fields are filled
+        //check if all fields are filled
         if ( $("input.newuser").val() ) {
 
             var userEmail = $("#newUserEmail").val().trim();
             var userPassword = $("#newUserPassword").val().trim();
             var userName = $("#newUserName").val().trim();
 
-            // This will create a new object to go into the database
+            //Create a new object to go into the database
             var newUser = {
                 name: userName,
                 email: userEmail,
@@ -46,16 +60,7 @@ $(function() {
     
     });
 
-    // This saves the user who just logged in to localStorage to be used on other pages
-    function getUserIds(data) {
-        var userLoggedInId = (data[(data.length - 1)].id);
-        var userLoggedInName = (data[(data.length - 1)].name)
-        localStorage.setItem("userId", userLoggedInId);
-        localStorage.setItem("userName", userLoggedInName);
-        location.href = "/menu";
-    }
-
-    // This runs when an existing user signs in
+    //Sign In
     $("#signinbutton").on("click", function(event) {
         
         event.preventDefault();
@@ -74,33 +79,29 @@ $(function() {
             
             // get the user from the database
             // then we can get all associated items for that user
-            $.get("/api/user", user)
-                
-                .done(function( data ) {
+            $.get("/api/user", user) .done(function( data ) {
 
-                    console.log("Successfully signed in.")
-                    console.log( "Data Loaded: " + data );
+                console.log("Successfully signed in.")
+                console.log( "Data Loaded: " + data );
 
-                    // This stores the user's info to be used on other pages
-                    // FIX THE data[2] info to refelct the user who is logged in
-                    var userLoggedInName = data[2].name;
-                    var userLoggedInId = data[2].id;
-                    localStorage.setItem("userId", userLoggedInId);
-                    localStorage.setItem("userName", userLoggedInName);
+                //Store user info to be used on other pages
+                // FIX THE data[2] info to refelct the user who is logged in
+                var userLoggedInName = data[2].name;
+                var userLoggedInId = data[2].id;
+                localStorage.setItem("userId", userLoggedInId);
+                localStorage.setItem("userName", userLoggedInName);
 
-                    // NEED TO REDIRECT THEM TO MENU PAGE
-                    window.location.href = "/menu";
+                //Redirect to menu
+                window.location.href = "/menu";
 
-                }).fail(function(data) {
+            }).fail(function(data) {
 
-                alert("There was an error locating your user profile.");
+            alert("There was an error locating your user profile.");
 
             });
 
         } else {
             $(".alertUser").text("Please fill all required fields.");
-        }
-    
+        }   
     });
-
 });
