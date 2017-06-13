@@ -30,18 +30,30 @@ $(function() {
                 displayname = newUser.name + "\'s";
 
                 alert(displayname + " profile has been added to the database!");                
+                
 
             }).fail(function(data) {
 
                 alert("There was an error creating your user profile.");
 
             });
+            // This will get the users to identify the last user
+            $.get("/api/user", getUserIds)
 
         } else {
             $(".alertUser").text("Please fill all required fields.");
         }
     
     });
+
+    // This saves the user who just logged in to localStorage to be used on other pages
+    function getUserIds(data) {
+        var userLoggedInId = (data[(data.length - 1)].id);
+        var userLoggedInName = (data[(data.length - 1)].name)
+        localStorage.setItem("userId", userLoggedInId);
+        localStorage.setItem("userName", userLoggedInName);
+        location.href = "/menu";
+    }
 
     // This runs when an existing user signs in
     $("#signinbutton").on("click", function(event) {
@@ -63,11 +75,18 @@ $(function() {
             // get the user from the database
             // then we can get all associated items for that user
             $.get("/api/user", user)
-
+                
                 .done(function( data ) {
 
                     console.log("Successfully signed in.")
                     console.log( "Data Loaded: " + data );
+
+                    // This stores the user's info to be used on other pages
+                    // FIX THE data[2] info to refelct the user who is logged in
+                    var userLoggedInName = data[2].name;
+                    var userLoggedInId = data[2].id;
+                    localStorage.setItem("userId", userLoggedInId);
+                    localStorage.setItem("userName", userLoggedInName);
 
                     // NEED TO REDIRECT THEM TO MENU PAGE
                     window.location.href = "/menu";

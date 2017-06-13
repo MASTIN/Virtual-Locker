@@ -35,7 +35,7 @@ $(document).ready(function() {
         var editedPurchasePrice = $("#purchase_price").val().trim() || 0;
         var editedSerialNumber = $("#serial_number").val().trim();
         var editedImage = $("#image").val().trim();
-        var editedNotes = $("#notes").val().trim();
+        var editedNotes = $("#loadNotes").val().trim();
         var userEntered = 3;
 
         // This checks to make sure these fields are not empty
@@ -64,7 +64,7 @@ $(document).ready(function() {
             serial_number: editedSerialNumber,
             image: editedImage,
             notes: editedNotes,
-
+            
             // NEEDS FIXING - identify the UserID
             // NEEDS FIXING - identify the UserID
             // NEEDS FIXING - identify the UserID

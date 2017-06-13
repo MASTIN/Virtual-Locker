@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    var userLoggedInId = (localStorage.getItem("userId"));
+    var userLoggedInName = (localStorage.getItem("userName"));
+    
+    // this sets the name of the user to the html for personalization
+    $("#theUsersName").text(userLoggedInName);
 
     /* Formatting function for row details */
     function format (data) {
@@ -18,27 +23,33 @@ $(document).ready(function() {
         
         // This will display the rows of data from the database into the table
         for (var i = 0; i < data.length; i++) {
-        // This empties the object each time the loop is run
-        var objArray = {};
-        // These commands set the properties of the object
-        objArray.item_name = data[i].item_name;
-        objArray.location = data[i].location;
-        objArray.category = data[i].category;
-        objArray.value = "$" + data[i].value.toLocaleString();
-        objArray.date_purchased = moment(data[i].date_purchased).format("L");
-        objArray.purchase_price = "$" + data[i].purchase_price.toLocaleString();
-        objArray.serial_number = data[i].serial_number;
-        objArray.image = "<img class='tableImage' src='" + data[i].image + "'/>"
-        objArray.notes = data[i].notes;
-        objArray.update = "<i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i>";
-        
-        //changed value to id from DB not array index - was not deleting correct items
-        //did the same to update object but screwed up all Stuart's stuff so put it back
-        objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i></a>";
+            
+            // This will only show the inventory of the user who is logged in
+            if (userLoggedInId != data[i].UserId) {
+                
+            } else {
+                // This empties the object each time the loop is run
+                var objArray = {};
+                // These commands set the properties of the object
+                objArray.item_name = data[i].item_name;
+                objArray.location = data[i].location;
+                objArray.category = data[i].category;
+                objArray.value = "$" + data[i].value.toLocaleString();
+                objArray.date_purchased = moment(data[i].date_purchased).format("L");
+                objArray.purchase_price = "$" + data[i].purchase_price.toLocaleString();
+                objArray.serial_number = data[i].serial_number;
+                objArray.image = "<img class='tableImage' src='" + data[i].image + "'/>"
+                objArray.notes = data[i].notes;
+                objArray.update = "<i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateItem center-td' aria-hidden='true'></i>";
+                
+                //changed value to id from DB not array index - was not deleting correct items
+                //did the same to update object but screwed up all Stuart's stuff so put it back
+                objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash fa-lg deleteItem center-td' aria-hidden='true'></i></a>";
 
-        // This pushes each new object to an array
-        arrayofItems.push(objArray);
-    }
+                // This pushes each new object to an array
+                arrayofItems.push(objArray);
+            }
+        }
         // This function orders to create the table on inventory.html page
         makeTable();
     };

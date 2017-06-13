@@ -1,5 +1,7 @@
     // This runs when the user submits a new item
     $("#newItem").on("click", function(event) {
+        var userLoggedInId = (localStorage.getItem("userId"));
+        var userLoggedInName = (localStorage.getItem("userName"));
         
         event.preventDefault();
         var newItemName = $("#item_name").val().trim();
@@ -51,7 +53,7 @@
             // NEEDS FIXING - identify the UserID
             // NEEDS FIXING - identify the UserID
             // NEEDS FIXING - identify the UserID
-            UserId: 3
+            UserId: userLoggedInId
         };
 
         submitItem(newItem);
