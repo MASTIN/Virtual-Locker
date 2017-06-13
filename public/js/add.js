@@ -1,24 +1,34 @@
-    // This runs when the user submits a new item
+$(function(){ 
+
+    /////**********FUNCTIONS**********/////
+
+    // Submits new item to the database
+    function submitItem(newItem) {
+        $.post("/api/inventory", newItem, function() { 
+        });
+        location.href = "/inventory.html";
+    }
+        
+    /////**********EVENT LISTENERS**********/////
+    
     $("#newItem").on("click", function(event) {
+        event.preventDefault();
+
+        //get UserId and UserName from local storage (from log-in)
         var userLoggedInId = (localStorage.getItem("userId"));
         var userLoggedInName = (localStorage.getItem("userName"));
-        
-        event.preventDefault();
+
         var newItemName = $("#item_name").val().trim();
         var newLocation = $("#location").val().trim();
         var newCategory = $("#category").val();
 
         // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
-        // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
-        // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
-        var newValue = $("#value").val() || 0;
-        
-        // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
-        // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
+        var newValue = $("#value").val() || 0;      
         // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
         var newDatePurchased = $("#date_purchased").val() || "2049-12-31";
-        
+        // NEEDS FIXING - A proper date has to be entered or server will crash, hence the || 
         var newPurchasePrice = $("#purchase_price").val().trim() || 0;
+
         var newSerialNumber = $("#serial_number").val().trim();
         var newImage = $("#image").val().trim();
         var newNotes = $("#notes").val().trim();
@@ -38,7 +48,7 @@
             return;
         }
 
-        // This will create a new object to go into the database
+        //Create a new object to go into the database
         var newItem = {
             item_name: newItemName,
             location: newLocation,
@@ -58,10 +68,4 @@
 
         submitItem(newItem);
     });
-
-    // This function submits the item to the database
-    function submitItem(newItem) {
-        $.post("/api/inventory", newItem, function() { 
-        });
-        location.href = "/inventory.html";
-    }
+}) 

@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-    // POST route for creating a new user
+    //route for creating a new user
     app.post("/api/user/:name?", function(req, res) {
 
         var name = req.params.name;
@@ -13,7 +13,7 @@ module.exports = function(app) {
             res.redirect("/menu");
         });
     });
-
+    //route for getting all existing users
     app.get("/api/user", function(req, res) {
         db.User.findAll({
         }).then(function(results) { 

@@ -40,7 +40,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true
         },
     },
-        { //Item belongs to one User
+    //ITEMS TO USERS ASSOCIATION - Each item belongs to one User
+        { 
             classMethods: {
                 associate: function(models) {
                     Item.belongsTo(models.User, {

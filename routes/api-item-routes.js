@@ -2,7 +2,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-    
+    //route for retrieving all items
     app.get("/api/inventory", function(req, res) {
         var query = {};
         if (req.query.UserId) {
@@ -18,7 +18,7 @@ module.exports = function(app) {
         });
     });
 
-    // GET route for retrieving a single item
+    // route for retrieving a single item
     app.get("/api/inventory/:id", function(req, res) {
         db.Item.findOne({
             where: {
@@ -29,7 +29,7 @@ module.exports = function(app) {
         });
     });
 
-    // POST route for saving a new item
+    // route for saving a new item
     app.post("/api/inventory", function(req, res) {
         db.Item.create(req.body)
         // .then(function(result) {
@@ -37,7 +37,7 @@ module.exports = function(app) {
         // });
     });
 
-    // PUT route for updating an item
+    // route for updating an item
     app.put("/api/inventory", function(req, res) {
         db.Item.update(
         req.body,
@@ -50,7 +50,7 @@ module.exports = function(app) {
         });
     });
 
-    // DELETE route for deleting and item
+    // route for deleting an item
     app.delete("/api/inventory/:id", function(req, res) {
         db.Item.destroy({
         where: {

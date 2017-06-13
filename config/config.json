@@ -7,11 +7,11 @@
     "dialect": "mysql"
   },
 
-  "test": {
-    "username": "jh8cy0x372s2hn2q",
-    "password": "x93sf1u64mssidfb",
-    "database": "pc5eekpar48lja4g",
-    "host": "mgs0iaapcj3p9srz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
 

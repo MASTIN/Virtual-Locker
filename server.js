@@ -23,7 +23,6 @@ require("./routes/api-item-routes.js")(app);
 require("./routes/api-user-routes.js")(app);
 
 //sequelize sync models then start express app
-// This we'll use if we need to change the tables
 db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
         console.log("SafeKeeper is listening on port: " + PORT);

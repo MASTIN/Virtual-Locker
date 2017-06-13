@@ -1,12 +1,23 @@
-    var userLoggedInName = (localStorage.getItem("userName"));
-    // this sets the name of the user to the html for personalization
-    $("#showName").text(userLoggedInName);
+$(function(){ 
+        
+    /////**********GLOBAL VARIABLES***********///// 
 
-	// when button is clicked, routes user to corresponding page
+    var userLoggedInName = (localStorage.getItem("userName"));
+   
+    /////**********EVENT LISTENERS**********/////
+
+    //To inventory
 	$("#invButton").click(function () {
         location.href = "/inventory";
     });
-
+    //To add an item
 	$("#addButton").click (function () {
         location.href = "/add";
     });
+
+    /////**********ON PAGE LOAD**********/////
+
+     //Display user name for personalization
+    $("#showName").text(userLoggedInName);
+
+})
