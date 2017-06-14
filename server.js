@@ -29,17 +29,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-// set up static directory for all public files
-// app.use(express.static(path.join(__dirname , "app/views")));
-
-// old code for static directory
+// static directory
 app.use(express.static(path.join(__dirname , "public")));
 
-//*****ROUTES*****//
-// require("./routes/html-routes.js")(app);
+//*****ROUTES for inventory *****//
 require("./routes/api-item-routes.js")(app);
-// require("./routes/api-user-routes.js")(app);
-
 // ROUTES Using Passport for Authentication
 var authRoute = require('./routes/authRoutes.js')(app, passport);
 
