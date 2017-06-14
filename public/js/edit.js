@@ -1,4 +1,10 @@
 $(function() {
+    var userLoggedInId = "";
+    // This gets the id and name of the user
+    $.get("/api/user_data").then(function(data) {
+      userLoggedInId = data.id;
+      userLoggedInName = data.name;
+    });;
 
     /////**********FUNCTIONS**********/////
 
@@ -10,7 +16,9 @@ $(function() {
             data: itemChanged
         });
         //return user to inventory page
-        // NEEDS FIXING - This works, but I don't like it.  The routes needs to be adjusted, just not sure how yet.
+        // console.log(userLoggedInId);
+        // console.log("~~~~~~~~~~~~~~~~~");
+        // console.log(itemChanged);
         location.href = "/inventory.html";
     }   
 
@@ -29,11 +37,9 @@ $(function() {
         var editedDatePurchased = $("#date_purchased").val() || "2049-12-31";
          // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
         var editedPurchasePrice = $("#purchase_price").val().trim() || 0;
-
         var editedSerialNumber = $("#serial_number").val().trim();
         var editedImage = $("#image").val().trim();
         var editedNotes = $("#loadNotes").val().trim();
-        var userEntered = 3;
 
         //Check to make sure these fields are not empty
         if (!editedItemName) {
@@ -61,10 +67,12 @@ $(function() {
             serial_number: editedSerialNumber,
             image: editedImage,
             notes: editedNotes,
-            
-            // NEEDS FIXING - identify the UserID
-            UserId: 3
+            UserId: userLoggedInId
         };
+        // This capitalizes the first letter of each wors, and makes all others lowercase
+        itemChanged.location = (itemChanged.location).toLowerCase().replace(/\b[a-z]/g, function(letter) {
+            return letter.toUpperCase();
+        });
         submitEditedItem(itemChanged)
     });
 

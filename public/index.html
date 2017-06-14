@@ -15,7 +15,7 @@
 	<!-- Link for shine.js script -->
 	<script src="js/shine.min.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
@@ -42,107 +42,96 @@
 		</div>
 	</div> <!-- close container -->
 
-	<!-- =============MODALS====================== -->
+	
+<!-- =============MODALS====================== -->
 
-	<!-- Sign in Modal -->
-	<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<!--header-->
-				<div class="modal-header">
-					<h5 class="modal-title" id="signinModalLabel">Sign In</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<!--form in body-->
-				<div class="modal-body">
-					<form class="form-horizontal">
+<!-- Sign in Modal -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
 
-						<!--email input-->
+		<div class="modal-content">
+    		<div class="modal-header">
+        		<h5 class="modal-title" id="signinModalLabel">Sign In</h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+      
+		    <div class="modal-body">
+				<form class="form-horizontal" id="signin" name="signin" method="post" action="/signin">
+					  	<div class="form-group">
+					    	<label for="email" class="col-sm-3 control-label">Email</label>
+					    	<div class="col-sm-9">
+					      		<input type="text" name="email" class="form-control existinguser" id="userEmail" placeholder="">
+					    	</div>
+					  	</div>
+
 						<div class="form-group">
-							<label for="userEmail" class="col-sm-3 control-label">Email</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control existinguser" id="userEmail" placeholder="">
-							</div>
-						</div>
+					    	<label for="password" class="col-sm-3 control-label">Password</label>
+					    	<div class="col-sm-9">
+					    		<input type="password" name="password" class="form-control existinguser" id="userPassword">
+					    	</div>
+					  	</div>					
+						<p class="alertUser"></p>		
+		    </div>
+    
+		    <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="submit" id="signinbutton" class="btn btn-warning">Submit</button>
+		    	</form>
+		    </div>
+		</div>
+  	</div>
+</div>
 
-						<!--password input-->
-						<div class="form-group">
-							<label for="userPassword" class="col-sm-3 control-label">Password</label>
-							<div class="col-sm-9">
-								<input type="password" class="form-control existinguser" id="userPassword">
-							</div>
-						</div>					
-					</form>
+<!-- Sign up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
 
-					<!--alert user if required field missing-->
-					<p class="alertUser"></p>
+		<div class="modal-content">
+			<div class="modal-header">
+        		<h5 class="modal-title" id="signinModalLabel">Sign Up</h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          		<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+    	
+    	<div class="modal-body">
+			<form class="form-horizontal" id="signup" name="signup" method="post" action="/signup">
 			
-				</div>
-				<!--buttons in footer-->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" id="signinbutton" class="btn btn-warning">Submit</button>
-				</div>
+			<div class="form-group">
+			    <label for="name" class="col-sm-3 control-label">Name</label>
+			    <div class="col-sm-9">
+			    	<input type="text" class="form-control newuser" id="newUserName" placeholder="" name="name">
+			    </div>
 			</div>
-		</div>
-	</div> <!--end of sign in modal-->
 
-	<!-- Sign up Modal -->
-	<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<!--header-->
-				<div class="modal-header">
-					<h5 class="modal-title" id="signinModalLabel">Sign Up</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<!--form in body-->
-				<div class="modal-body">
-					<form class="form-horizontal">
-
-						<!--new user name input-->
-						<div class="form-group">
-							<label for="newUserName" class="col-sm-3 control-label">Name</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control newuser" id="newUserName" placeholder="">
-							</div>
-						</div>
-
-						<!--new user email input-->
-						<div class="form-group">
-							<label for="newUserEmail" class="col-sm-3 control-label">Email</label>
-							<div class="col-sm-9">
-								<input type="email" class="form-control newuser" id="newUserEmail" placeholder="">
-							</div>
-						</div>
-
-						<!--new user password input-->
-						<div class="form-group">
-							<label for="newUserPassword" class="col-sm-3 control-label">Password</label>
-							<div class="col-sm-9">
-								<input type="password" class="form-control newuser" id="newUserPassword">
-							</div>
-						</div>					
-					</form>
-
-					<!--alert user if required field missing-->
-					<p class="alertUser"></p>
-
-				</div>
-				<!--buttons in footer-->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" id="signupbutton" class="btn btn-warning">Submit</button>
-				</div>
+			<div class="form-group">
+			    <label for="email" class="col-sm-3 control-label">Email</label>
+			    <div class="col-sm-9">
+			    	<input type="email" class="form-control newuser" id="newUserEmail" placeholder="" name="email">
+			    </div>
 			</div>
-		</div>
-	</div> <!--end of sign up modal-->	
 
-	<!-- js for user login (needs to be after html to work properly -->
-	<script type="text/javascript" src="./js/login.js"></script>
+			<div class="form-group">
+			    <label for="password" class="col-sm-3 control-label">Password</label>
+			    <div class="col-sm-9">
+			    	<input type="password" class="form-control newuser" id="newUserPassword" name="password">
+			    </div>
+			</div>					
+			<p class="alertUser"></p>
+      	</div>
+
+    	<div class="modal-footer">
+    		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        	<button type="submit" id="signupbutton" value="Sign Up" class="btn btn-warning">Submit</button>
+        	</form>
+      	</div>
+    </div>
+  </div>
+</div>			
+
+<!-- js for user login (needs to be after html to work properly -->
+<script type="text/javascript" src="./js/login.js"></script>
 </body>
 </html>
