@@ -13,7 +13,6 @@ module.exports = function(app) {
             where: query,
             include: [db.User]
         }).then(function(results) { 
-            // console.log(results);  
             res.json(results);
         });
     });
@@ -24,17 +23,14 @@ module.exports = function(app) {
             where: {
             id: req.params.id
         }
-        }).then(function(dbPost) {
-        res.json(dbPost);
+        }).then(function(result) {
+            res.json(result);
         });
     });
 
     // route for saving a new item
     app.post("/api/inventory", function(req, res) {
         db.Item.create(req.body)
-        // .then(function(result) {
-            // res.redirect("/inventory");
-        // });
     });
 
     // route for updating an item
@@ -45,8 +41,6 @@ module.exports = function(app) {
             where: {
             id: req.body.id
             }
-        }).then(function(result) {
-            // res.redirect("/inventory");
         });
     });
 
