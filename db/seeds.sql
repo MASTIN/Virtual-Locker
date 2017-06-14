@@ -56,7 +56,7 @@ INSERT INTO Items (item_name, location, category, value, date_purchased, purchas
 VALUES ("Stereo System", "Living Room", "Electronics", 375, "2011-05-18", 825, "34110-PLERT", "https://i.ytimg.com/vi/I16dtFt0Ook/maxresdefault.jpg", "Subwoofer isn't working.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
 
 INSERT INTO Items (item_name, location, category, value, date_purchased, purchase_price, serial_number, image, notes, createdAt, updatedAt, UserId)
-VALUES ("Sectional Couch", "Living Room", "Furniture", 1260, "2015-12-18", 1700, "LPEWMB789990IWQ", "https://images.furnituredealer.net/img/products%2Fbenchcraft%2Fcolor%2Fjustyna_8910216%2B34%2B67-m1.jpg", "Dog peed on the middle pillow.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
+VALUES ("Sectional Couch Sofa", "Living Room", "Furniture", 1260, "2015-12-18", 1700, "LPEWMB789990IWQ", "https://images.furnituredealer.net/img/products%2Fbenchcraft%2Fcolor%2Fjustyna_8910216%2B34%2B67-m1.jpg", "Dog peed on the middle pillow.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
 
 INSERT INTO Items (item_name, location, category, value, date_purchased, purchase_price, serial_number, image, notes, createdAt, updatedAt, UserId)
 VALUES ("Dresser", "Master Bedroom", "Furniture", 576, "2003-11-07", 934, "RYW-14403-MLPI", "https://s-media-cache-ak0.pinimg.com/736x/64/35/15/6435154d8f1d29546180c49f5a83848d.jpg", "Mirror is chipped on the top left.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
