@@ -1,23 +1,17 @@
-$(function(){ 
-        
-    /////**********GLOBAL VARIABLES***********///// 
-
-    var userLoggedInName = (localStorage.getItem("userName"));
-   
-    /////**********EVENT LISTENERS**********/////
-
-    //To inventory
-	$("#invButton").click(function () {
-        location.href = "/inventory";
-    });
-    //To add an item
-	$("#addButton").click (function () {
-        location.href = "/add";
+$(function() { 
+    // GET request to figure out which user is logged in
+    // Then display their name on the page
+  $.get("/api/user_data").then(function(data) {
+      $(".showName").text(data.name + "\'s");
     });
 
-    /////**********ON PAGE LOAD**********/////
+  // when button is clicked, routes user to corresponding page
+  $("#invButton").click(function () {
+    location.href = "/inventory";
+  });
 
-     //Display user name for personalization
-    $("#showName").text(userLoggedInName);
+  $("#addButton").click (function () {
+    location.href = "/add";
+  });
 
-})
+});

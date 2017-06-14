@@ -155,7 +155,7 @@ th {
 	font-family: 'Fjalla One', sans-serif;
 }
 
-#showUsername {
+.showName {
 	color: #eb9316;
 	text-align: left;
 	padding: 0;
@@ -163,6 +163,10 @@ th {
 	position: relative;
 	left: 20px;
 	top: 15px;
+}
+
+.showNameInventory {
+	color: #eb9316;
 }
 
 footer {
