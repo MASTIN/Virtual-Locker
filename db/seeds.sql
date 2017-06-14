@@ -4,9 +4,12 @@ USE pc5eekpar48lja4g;
 USE VirtualLockerDB;
 
 -- Inserting info for the Users table
-INSERT INTO Users (name, email, password, createdAt, updatedAt) VALUES ("India", "india@yahoo.com", "123", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO Users (name, email, password, createdAt, updatedAt) VALUES ("Mary", "mary@gmail.com", "1234", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO Users (name, email, password, createdAt, updatedAt) VALUES ("Stuart", "stuart@hotmail.com", "12345", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+-- India's pw is 123
+-- Mary's pw is 1234
+-- Stuart's pw is 12345
+INSERT INTO Users (name, email, password, createdAt, updatedAt) VALUES ("India", "india@yahoo.com", "$2a$08$jSBxxEtdgo8y23QSZqTNfeiPxMn75j2CMRFEIitwtL3.uf72k0dh6", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO Users (name, email, password, createdAt, updatedAt) VALUES ("Mary", "mary@gmail.com", "$2a$08$xK7WnPiyryMRo6Mn8aAv8Ov80jrGkI55PbZ4dP/rei95VpN/9CFPW", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO Users (name, email, password, createdAt, updatedAt) VALUES ("Stuart", "stuart@hotmail.com", "$2a$08$.jrNX0mqZ56hb4q9/u9xxe.OJBS/WUQYbJ7CbWRGUpWbIc.GP8dQ6", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Inserting info for the Items table for UserId 1
 INSERT INTO Items (item_name, location, category, value, date_purchased, purchase_price, serial_number, image, notes, createdAt, updatedAt, UserId)

@@ -40,6 +40,11 @@ module.exports = function(app, passport) {
 	      });
 	    }
 	    else {
+				// This capitalizes the first letter of each name, and lowercase all others
+        req.user.name = (req.user.name).toLowerCase().replace(/\b[a-z]/g, function(letter) {
+            return letter.toUpperCase();
+        });
+
 	      // Otherwise send back the user's name
 	      res.json({
 	        name: req.user.name,
