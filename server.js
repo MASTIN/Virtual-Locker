@@ -29,10 +29,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-// set up static directory for all public files
-// app.use(express.static(path.join(__dirname , "app/views")));
-
-// old code for static directory
+// static directory
 app.use(express.static(path.join(__dirname , "public")));
 
 //*****ROUTES for inventory *****//
