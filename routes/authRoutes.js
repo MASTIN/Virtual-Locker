@@ -43,6 +43,8 @@ module.exports = function(app, passport) {
 	      // Otherwise send back the user's name
 	      res.json({
 	        name: req.user.name,
+	        email: req.user.email,
+	        id: req.user.id
 	      });
 	    }
 	  });
@@ -50,9 +52,7 @@ module.exports = function(app, passport) {
 	// custom middleware to protect menu route
 	function isLoggedIn(req, res, next) {
 	 
-	    if (req.isAuthenticated())
-	     
-	        return next();
+	    if (req.isAuthenticated()) return next();
 
 	    else res.redirect('/signin');
 	}
