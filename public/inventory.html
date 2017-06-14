@@ -43,7 +43,7 @@
 	<div class="container">
 		<!-- DATABLE -->
 		<div id= "table-container">
-			<h1><span id="theUsersName"></span>'s Inventory</h1>
+			<h1><span class="showNameInventory"></span> Inventory</h1>
 			<table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
 				<thead>
 				<tr>
@@ -75,6 +75,15 @@
 			</p>
 		</div>    
 	</footer>
+<script>
+$(function() { 
+    // GET request to figure out which user is logged in
+    // Then display their name on the page
+  $.get("/api/user_data").then(function(data) {
+      $(".showNameInventory").text(data.name + "\'s");
+    });
 
+});	
+</script>
 </body>
 </html>
