@@ -1,10 +1,15 @@
 $(function() {
     
     /////**********GLOBAL VARIABLES***********/////
-
-    //Get user info from local storage
-    var userLoggedInId = (localStorage.getItem("userId"));
-    var userLoggedInName = (localStorage.getItem("userName"));
+      //Get user info
+    var userLoggedInId = "";
+    var userLoggedInName = "";
+    
+    $.get("/api/user_data").then(function(data) {
+      userLoggedInId = data.id;
+      userLoggedInName = data.name;
+    });;
+  
     //Store objects from DB
     var arrayofItems = [];   
     
