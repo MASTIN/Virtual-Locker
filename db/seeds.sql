@@ -34,7 +34,7 @@ INSERT INTO Items (item_name, location, category, value, date_purchased, purchas
 VALUES ("Art work", "Master Bedroom", "Miscellaneous", 200400, "1982-05-01", 175000, "MWLCK-01-5-78", "http://d39kbiy71leyho.cloudfront.net/wp-content/uploads/2015/10/28092930/KahlerHero.png", "My Wife's Lovers by Carl Kahler.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO Items (item_name, location, category, value, date_purchased, purchase_price, serial_number, image, notes, createdAt, updatedAt, UserId)
-VALUES ("Cuisinart Stand Mixer", "Kitchen", "Appliances", 200, "2017-01-09", 250, "SM-50", "https://smhttp-ssl-21049.nexcesscdn.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-50bc_-_cuisinart_precision_5.5_quart_stand_mixer_brushed_chrome_1_.jpg", "Works great.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("Cuisinart Mixer", "Kitchen", "Appliances", 200, "2017-01-09", 250, "SM-50", "https://smhttp-ssl-21049.nexcesscdn.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-50bc_-_cuisinart_precision_5.5_quart_stand_mixer_brushed_chrome_1_.jpg", "Works great.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO Items (item_name, location, category, value, date_purchased, purchase_price, serial_number, image, notes, createdAt, updatedAt, UserId)
 VALUES ("Couch", "Living Room", "Furniture", 1100, "2013-10-10", 1826, "740MUYY", "http://cozycouchsf.com/wp-content/uploads/2016/03/main-image.jpg", "Ethan Allen couch.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
