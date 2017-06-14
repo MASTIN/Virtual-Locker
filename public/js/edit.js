@@ -16,9 +16,6 @@ $(function() {
             data: itemChanged
         });
         //return user to inventory page
-        // console.log(userLoggedInId);
-        // console.log("~~~~~~~~~~~~~~~~~");
-        // console.log(itemChanged);
         location.href = "/inventory.html";
     }   
 
@@ -69,7 +66,7 @@ $(function() {
             notes: editedNotes,
             UserId: userLoggedInId
         };
-        // This capitalizes the first letter of each wors, and makes all others lowercase
+        // This capitalizes the first letter of each word
         itemChanged.location = (itemChanged.location).toLowerCase().replace(/\b[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });

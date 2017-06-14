@@ -1,15 +1,10 @@
 $(function() {
     
     /////**********GLOBAL VARIABLES***********/////
-      //Get user info
-    var userLoggedInId = "";
-    var userLoggedInName = "";
-    
-    $.get("/api/user_data").then(function(data) {
-      userLoggedInId = data.id;
-      userLoggedInName = data.name;
-    });;
-  
+    //Store current user data
+    var userLoggedInId;
+    // var userLoggedInName;
+   
     //Store objects from DB
     var arrayofItems = [];   
     
@@ -137,11 +132,14 @@ $(function() {
     });
 
     /////**********ON PAGE LOAD**********/////
-
-    //Display user name for personalization
-    $("#theUsersName").text(userLoggedInName);
+  //Get user data      
+    $.get("/api/user_data").then(function(data) {
+        userLoggedInId = data.id;
+        userLoggedInName = data.name;
+        //Display user name on page
+        $(".showNameInventory").text(data.name + "\'s");
+    });
 
     //Get and display inventory data
     $.get("/api/inventory", createDataArray);
-   
 });
