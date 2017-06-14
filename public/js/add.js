@@ -1,5 +1,13 @@
 $(function(){ 
 
+    var userLoggedInId = "";
+    var userLoggedInName = "";
+    
+    $.get("/api/user_data").then(function(data) {
+      userLoggedInId = data.id;
+      userLoggedInName = data.name;
+    });;
+
     /////**********FUNCTIONS**********/////
 
     // Submits new item to the database
@@ -14,9 +22,9 @@ $(function(){
     $("#newItem").on("click", function(event) {
         event.preventDefault();
 
-        //get UserId and UserName from local storage (from log-in)
-        var userLoggedInId = (localStorage.getItem("userId"));
-        var userLoggedInName = (localStorage.getItem("userName"));
+        // //get UserId and UserName from local storage (from log-in)
+        // var userLoggedInId = (localStorage.getItem("userId"));
+        // var userLoggedInName = (localStorage.getItem("userName"));
 
         var newItemName = $("#item_name").val().trim();
         var newLocation = $("#location").val().trim();
