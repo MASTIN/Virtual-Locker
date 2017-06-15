@@ -6,7 +6,7 @@ $(function(){
     $.get("/api/user_data").then(function(data) {
       userLoggedInId = data.id;
       userLoggedInName = data.name;
-    });;
+    });
 
     /////**********FUNCTIONS**********/////
 
