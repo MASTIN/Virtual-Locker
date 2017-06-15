@@ -35,6 +35,7 @@
 #headerlogo {
 	width: 100px;
 	height: auto;
+	margin-top: -35px;
 }
 
 #landingPageHeader {
@@ -43,6 +44,11 @@
 	text-align: center;
 	font-family: 'Fjalla One', sans-serif;
 	line-height: 100px;
+}
+
+#menuPagelogo {
+	width: 100px;
+	height: auto;
 }
 
 .fa-user {
@@ -85,19 +91,10 @@ button.login:last-child {
 	top: 15px;
 }
 
-.showNameInventory {
-	color: #eb9316;
-}
-
 .alertUser {
 	text-align: right;
 	color: #eb9316;
 	font-size: 12px;
-}
-
-.tableImage {
-	max-width: 200px;
-	height: auto;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
