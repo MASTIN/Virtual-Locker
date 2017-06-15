@@ -67,7 +67,7 @@ $(function(){
         };
        
         // This capitalizes the first letter of each word, and lowercase all others
-        newItem.location = (newItem.location).toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        newItem.location = (newItem.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
 
