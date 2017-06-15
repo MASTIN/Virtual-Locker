@@ -35,6 +35,7 @@
 #headerlogo {
 	width: 100px;
 	height: auto;
+	margin-top: -35px;
 }
 
 #landingPageHeader {

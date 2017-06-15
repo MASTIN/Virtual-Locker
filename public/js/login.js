@@ -1,21 +1,3 @@
-+var createErrorMessages = function() {
- +    var form = $(this),
-
- +    //for Safari
- +    form.on( "submit", function(event){
- +        if (this.checkValidity && !this.checkValidity()) {
- +            $(this).find(":invalid").first().focus();
- +            event.preventDefault();
- +        }
- +    });
-
- +    $("input", form).on()
- +};
- +
- +$("form").each(createErrorMessages);
- +
-
-
 /////**********SHINE**********/////
 
 var shine = new Shine(document.getElementById('landingPageHeader'));
@@ -34,4 +16,3 @@ shine.light.position.y = event.clientY;
 shine.config = config;
 shine.draw();
 }, false);
-
