@@ -201,12 +201,14 @@ footer a:hover {
 
 td.details-control {
     background: url('../images/expand-button.png') no-repeat center center;
-	background-size: 15px;
+	background-size: 12px;
+	width: 40px;
 }
 
 tr.shown td.details-control {
     background: url('../images/expand-arrow.png') no-repeat center center;
-	background-size: 15px;
+	background-size: 12px;
+	width: 40px;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
