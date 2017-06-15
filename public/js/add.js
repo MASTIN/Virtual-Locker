@@ -6,7 +6,7 @@ $(function(){
     $.get("/api/user_data").then(function(data) {
       userLoggedInId = data.id;
       userLoggedInName = data.name;
-    });;
+    });
 
     /////**********FUNCTIONS**********/////
 
@@ -36,7 +36,7 @@ $(function(){
         var newSerialNumber = $("#serial_number").val().trim();
         var newImage = $("#image").val().trim();
         var newNotes = $("#notes").val().trim();
-        var userEntered = 3;
+        var userEntered = userLoggedInId;
 
         // This checks to make sure these fields are not empty
          if (!newItemName) {
@@ -67,7 +67,7 @@ $(function(){
         };
        
         // This capitalizes the first letter of each word, and lowercase all others
-        newItem.location = (newItem.location).toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        newItem.location = (newItem.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
 
