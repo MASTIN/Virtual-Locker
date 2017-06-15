@@ -24,8 +24,19 @@
 <body>
 	<!-- FIXED NAVBAR -->
 	<nav class="fixed-nav-bar">
-  	<!-- Fixed navigation bar content -->
-  	<a class="brandname" href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
+	  	<!-- Logo / link to main menu -->
+	  	<a href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
+		<!-- dropdown menu -->
+		<div class="dropdown" id="menudropdown">
+		  	<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
+		  		Menu<span class="caret"></span>
+		  	</button>
+			<ul class="dropdown-menu">
+			    <li><a href="/add">Add Item</a></li>
+			    <li><a href="/inventory">View Inventory</a></li>
+			    <li><a href="/logout">Logout</a></li>
+		  	</ul>
+		</div>
 	</nav>
 
 	<!-- BACKGROUND IMAGE -->

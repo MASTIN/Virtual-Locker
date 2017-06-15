@@ -42,6 +42,7 @@
 	font-size: 80px;
 	text-align: center;
 	font-family: 'Fjalla One', sans-serif;
+	line-height: 100px;
 }
 
 .fa-user {
@@ -86,6 +87,11 @@ button.login:last-child {
 #navbarlogo {
 	width: 35px;
 	height: auto;
+}
+
+#menudropdown {
+	float: right;
+	margin-right: 100px;
 }
 
 /*TABLE STYLING*/
