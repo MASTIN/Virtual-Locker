@@ -1,3 +1,13 @@
+/* STICKY FOOTER STYLES */
+body {
+  	/* Margin bottom by footer height */
+  	margin-bottom: 140px;
+}
+
+html {
+	position: relative;
+}
+
 /* USED TO VERTICALLY AND HORIZONTALLY CENTER CONTENT */
 .centerContentParent {
     display: flex;
@@ -183,6 +193,11 @@ footer {
 	border-top: solid 15px rgba(169,169,169, .3);
 	border-bottom: solid 60px rgba(169,169,169, .3);
 	text-align: center;
+	
+	height: 140px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 footer a {
