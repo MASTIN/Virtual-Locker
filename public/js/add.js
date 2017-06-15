@@ -36,7 +36,7 @@ $(function(){
         var newSerialNumber = $("#serial_number").val().trim();
         var newImage = $("#image").val().trim();
         var newNotes = $("#notes").val().trim();
-        var userEntered = 3;
+        var userEntered = userLoggedInId;
 
         // This checks to make sure these fields are not empty
          if (!newItemName) {
