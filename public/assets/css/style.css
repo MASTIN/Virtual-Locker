@@ -1,16 +1,11 @@
-/* USED TO VERTICALLY AND HORIZONTALLY CENTER CONTENT */
-.centerContentParent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* STICKY FOOTER STYLES */
+body {
+  	/* Margin bottom by footer height */
+  	margin-bottom: 140px;
 }
 
-/* USED TO VERTICALLY AND HORIZONTALLY CENTER CONTENT */
-.centerContentChild {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+html {
+	position: relative;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
@@ -30,33 +25,6 @@
     left: 0;
 
     opacity: .5;
-}
-
-#headerlogo {
-	width: 100px;
-	height: auto;
-	margin-top: -35px;
-}
-
-#landingPageHeader {
-	color: #3E3F47;
-	font-size: 80px;
-	text-align: center;
-	font-family: 'Fjalla One', sans-serif;
-	line-height: 100px;
-}
-
-.fa-user {
-	padding-left: 10px;
-}
-
-#loginButtons {
-	text-align: center;
-	margin-top: 30px;
-}
-
-button.login:last-child {
-    margin-left: 15%;
 }
 
 /* NAVBAR STYLING */
@@ -145,23 +113,6 @@ th {
 	opacity: .8;
 }
 
-.modal-backdrop.in {
-	opacity: .3;
-}
-
-#signinModal, #signupModal {
-	margin-top: 100px;
-}
-
-.modal-title {
-	font-size: 30px;
-	float: left;
-}
-
-.modal-header {
-	font-family: 'Fjalla One', sans-serif;
-}
-
 .showName {
 	color: #eb9316;
 	text-align: left;
@@ -175,7 +126,7 @@ th {
 .showNameInventory {
 	color: #eb9316;
 }
-
+/* FOOTER STYLES */
 footer {
 	background: rgba(207, 200, 200, .6) url("../images/grey.jpg") no-repeat center center fixed;
 	color: #696969;
@@ -184,6 +135,11 @@ footer {
 	border-top: solid 15px rgba(169,169,169, .3);
 	border-bottom: solid 60px rgba(169,169,169, .3);
 	text-align: center;
+	
+	height: 140px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 footer a {
