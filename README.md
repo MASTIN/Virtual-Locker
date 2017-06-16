@@ -41,6 +41,6 @@ ___
 ---
 ## Contributors
 
-- [@stuartschafer](https://github.com/stuartschafer) :boom:
+- [@stuartschafer](https://github.com/stuartschafer) :fireworks:
 - [@indiaaeevans](https://github.com/indiaaeevans) :v:
 - [@mamorvan](https://www.github.com/mamorvan) :koala:
