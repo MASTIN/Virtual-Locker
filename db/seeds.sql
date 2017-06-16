@@ -1,7 +1,3 @@
--- For the users table using JawsDB on heroku
-USE pc5eekpar48lja4g;
--- For the users table using localhost
-USE VirtualLockerDB;
 
 -- Inserting info for the Users table
 -- India's pw is 123

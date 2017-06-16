@@ -28,11 +28,11 @@ $(function() {
         var editedLocation = $("#location").val().trim();
         var editedCategory = $("#category").val();
 
-        // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
+        //A value has to be entered or server will crash
         var editedValue = $("#value").val() || 0;  
-        // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
+        //A value has to be entered or server will crash
         var editedDatePurchased = $("#date_purchased").val() || "2049-12-31";
-         // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
+        //A value has to be entered or server will crash
         var editedPurchasePrice = $("#purchase_price").val().trim() || 0;
         var editedSerialNumber = $("#serial_number").val().trim();
         var editedImage = $("#image").val().trim();
@@ -66,8 +66,8 @@ $(function() {
             notes: editedNotes,
             UserId: userLoggedInId
         };
-        // This capitalizes the first letter of each word
-        itemChanged.location = (itemChanged.location).toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        //Capitalize the first letter after a space
+        itemChanged.location = (itemChanged.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
         submitEditedItem(itemChanged)
@@ -88,5 +88,4 @@ $(function() {
     $("#serial_number").val(itemBeingEdited.serial_number);
     $("#image").val(itemBeingEdited.image);
     $("#loadNotes").val(itemBeingEdited.notes);
-
 });

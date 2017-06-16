@@ -1,11 +1,10 @@
 $(function() { 
-    // GET request to figure out which user is logged in
-    // Then display their name on the page
+    // GET request to get current user info and display name
   $.get("/api/user_data").then(function(data) {
       $(".showName").text(data.name + "\'s");
     });
 
-  // when button is clicked, routes user to corresponding page
+  //event listeners to route user to corresponding page
   $("#invButton").click(function () {
     location.href = "/inventory";
   });
@@ -13,5 +12,4 @@ $(function() {
   $("#addButton").click (function () {
     location.href = "/add";
   });
-
 });

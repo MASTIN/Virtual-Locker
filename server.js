@@ -17,23 +17,23 @@ var PORT = process.env.PORT || 8080;
 // For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(bodyParser.text());
-// app.use(bodyParser.json({ type: "application/vnd.api+json"}));
  
 // For Passport
 app.use(session({
     secret: 'keyboard cat',
     resave: true,
     saveUninitialized: true
-})); // session secret
+}));
 app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+ // persistent login sessions
+app.use(passport.session());
 
 // static directory
 app.use(express.static(path.join(__dirname , "public")));
 
 //*****ROUTES for inventory *****//
 require("./routes/api-item-routes.js")(app);
+
 // ROUTES Using Passport for Authentication
 var authRoute = require('./routes/authRoutes.js')(app, passport);
 

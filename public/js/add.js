@@ -26,11 +26,11 @@ $(function(){
         var newLocation = $("#location").val().trim();
         var newCategory = $("#category").val();
 
-        // NEEDS FIXING - A value has to be entered or server will crash, hence the ||
+        //A value has to be entered or server will crash
         var newValue = $("#value").val() || 0;      
-        // NEEDS FIXING - A proper date has to be entered or server will crash, hence the ||
+        //A value has to be entered or server will crash
         var newDatePurchased = $("#date_purchased").val() || "2049-12-31";
-        // NEEDS FIXING - A proper date has to be entered or server will crash, hence the || 
+        //A value has to be entered or server will crash
         var newPurchasePrice = $("#purchase_price").val().trim() || 0;
 
         var newSerialNumber = $("#serial_number").val().trim();
@@ -38,7 +38,7 @@ $(function(){
         var newNotes = $("#notes").val().trim();
         var userEntered = userLoggedInId;
 
-        // This checks to make sure these fields are not empty
+        //Check to make sure these fields are not empty
          if (!newItemName) {
             $(".alertUser").text("Please enter an item name.");
             return;
@@ -66,7 +66,7 @@ $(function(){
             UserId: userLoggedInId
         };
        
-        // This capitalizes the first letter of each word, and lowercase all others
+        //Capitalize the first letter after a space, and lowercase all others
         newItem.location = (newItem.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });

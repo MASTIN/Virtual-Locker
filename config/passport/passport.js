@@ -18,11 +18,9 @@ module.exports = function(passport, user) {
 		},
 		// handle storing a user's details
 		function(req, email, password, done) {
-
 			var generateHash = function(password) {
 				return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 			};
-
 			// check to see if the user already exists
 			// if not, we add them
 			User.findOne({
@@ -41,7 +39,6 @@ module.exports = function(passport, user) {
 						password: userPassword,
 						name: req.body.name
 					};
-
 					User.create(data).then(function(newUser, created) {
 						if (!newUser) {
 							return done(null, false);
@@ -54,19 +51,15 @@ module.exports = function(passport, user) {
 			});
 		}
 	));
-
 	// serialize
 	passport.serializeUser(function(user, done) {
 
 		done(null, user.id);
 	});
-
-	// deserialize - get the user; if successful, an instance of 
-	// the Sequelize model is returned
+	// deserialize - get the user 
+	// if successful, an instance of the Sequelize model is returned
 	passport.deserializeUser(function(id, done) {
-
 		User.findById(id).then(function(user) {
-
 			if (user) {
 				done(null, user.get());
 			} else {
@@ -76,68 +69,42 @@ module.exports = function(passport, user) {
 	});
 
 	// LOCAL SIGN-IN
-	passport.use('local-signin', new LocalStrategy(
-	 
+	passport.use('local-signin', new LocalStrategy( 
 	    {
 	        // by default, local strategy uses username and password, we will override with email
-	 
-	        usernameField: 'email',
-	 
+	        usernameField: 'email',	 
 	        passwordField: 'password',
-	 
-	        passReqToCallback: true // allows us to pass back the entire request to the callback
-	    },
-	 
-	 
+ 			// allows us to pass back the entire request to the callback
+	        passReqToCallback: true 
+	    },	 
 	    function(req, email, password, done) {
-	 
 	        var User = user;
-	 
-	        var isValidPassword = function(userpass, password) {
-	 
+	        var isValidPassword = function(userpass, password) { 
 	            return bCrypt.compareSync(password, userpass);
-	 
-	        }
-	 
+	        }	 
 	        User.findOne({
 	            where: {
 	                email: email
 	            }
 	        }).then(function(user) {
-	 
-	            if (!user) {
-	 
+	            if (!user) { 
 	                return done(null, false, {
 	                    message: 'Email does not exist'
 	                });
-	 
 	            }
-	 
 	            if (!isValidPassword(user.password, password)) {
-	 
 	                return done(null, false, {
 	                    message: 'Incorrect password.'
 	                });
-	 
 	            }
-	 
-	 
 	            var userinfo = user.get();
 	            return done(null, userinfo);
-	 
-	 
-	        }).catch(function(err) {
-	 
+	        }).catch(function(err) {	 
 	            console.log("Error:", err);
-	 
 	            return done(null, false, {
 	                message: 'Something went wrong with your Signin.'
 	            });
-	 
-	        });
-	 
-	 
-	    }
-	 
+	        }); 
+	    }	 
 	));
 }

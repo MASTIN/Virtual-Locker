@@ -1,2 +1,2 @@
-CREATE DATABASE VirtualLockerDB;
-USE VirtualLockerDB;
+CREATE DATABASE virtuallockerdb;
+USE virtuallockerdb;
