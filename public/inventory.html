@@ -32,62 +32,63 @@
 
 </head>
 <body>
-	<!-- FIXED NAVBAR -->
-	<nav class="fixed-nav-bar">
-	  	<!-- Logo / link to main menu -->
-	  	<a href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
-		<!-- dropdown menu -->
-		<div class="dropdown" id="menudropdown">
-		  	<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
-		  		Menu<span class="caret"></span>
-		  	</button>
-			<ul class="dropdown-menu">
-			    <li><a href="/add">Add Item</a></li>
-			    <li><a href="/inventory">View Inventory</a></li>
-			    <li><a href="/logout">Logout</a></li>
-		  	</ul>
+	<div class="genContainer">
+		<!-- FIXED NAVBAR -->
+		<nav class="fixed-nav-bar">
+		  	<!-- Logo / link to main menu -->
+		  	<a href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
+			<!-- dropdown menu -->
+			<div class="dropdown" id="menudropdown">
+			  	<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
+			  		Menu<span class="caret"></span>
+			  	</button>
+				<ul class="dropdown-menu">
+				    <li><a href="/add">Add Item</a></li>
+				    <li><a href="/inventory">View Inventory</a></li>
+				    <li><a href="/logout">Logout</a></li>
+			  	</ul>
+			</div>
+		</nav>
+
+		<!-- BACKGROUND IMAGE -->
+		<img class="bgimage" src="./assets/images/grey.jpg">
+
+		<div class="container">
+			<!-- DATABLE -->
+			<div id="table-container">
+				<h1 class="headerInventory"><span class="showNameInventory"></span> Inventory</h1>
+				<table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
+					<thead>
+					<tr>
+						<th></th>
+						<th>Item <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Location <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Category <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Value <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Purchase<br>Date <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Purchase<br>Price <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Serial<br>Number</th>
+						<th>Update</th>
+						<th>Delete</th>
+					</tr>
+					</thead>
+
+					<tbody>
+						<!--table rows inserted here from inventory.js-->	
+					</tbody>
+				</table>
+			</div>
 		</div>
-	</nav>
 
-	<!-- BACKGROUND IMAGE -->
-	<img class="bgimage" src="./assets/images/grey.jpg">
-
-	<div class="container">
-		<!-- DATABLE -->
-		<div id="table-container">
-			<h1 class="headerInventory"><span class="showNameInventory"></span> Inventory</h1>
-			<table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
-				<thead>
-				<tr>
-					<th></th>
-					<th>Item <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-					<th>Location <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-					<th>Category <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-					<th>Value <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-					<th>Purchase<br>Date <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-					<th>Purchase<br>Price <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
-					<th>Serial<br>Number</th>
-					<th>Update</th>
-					<th>Delete</th>
-				</tr>
-				</thead>
-
-				<tbody>
-					<!--table rows inserted here from inventory.js-->	
-				</tbody>
-			</table>
-		</div>
+		<!-- STICKY FOOTER -->
+		<footer>
+				<div class="container">
+						<p>
+							<a href="https://github.com/MASTIN/Virtual-Locker">
+							<i class="fa fa-github"></i></a>
+						</p>
+				</div>    
+		</footer>
 	</div>
-
-	<!-- STICKY FOOTER -->
-	<footer class="footer">
-			<div class="container">
-					<p>
-						<a href="https://github.com/MASTIN/Virtual-Locker">
-						<i class="fa fa-github"></i></a>
-					</p>
-			</div>    
-	</footer>
-
 </body>
 </html>

@@ -22,148 +22,148 @@
 </head>
 
 <body>
-    <div class="genContainer">
-	<!-- FIXED NAVBAR -->
-	<nav class="fixed-nav-bar">
-	  	<!-- Logo / link to main menu -->
-	  	<a href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
-		<!-- dropdown menu -->
-		<div class="dropdown" id="menudropdown">
-		  	<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
-		  		Menu<span class="caret"></span>
-		  	</button>
-			<ul class="dropdown-menu">
-			    <li><a href="/add">Add Item</a></li>
-			    <li><a href="/inventory">View Inventory</a></li>
-			    <li><a href="/logout">Logout</a></li>
-		  	</ul>
-		</div>
-	</nav>
+	<div class="genContainer">
+		<!-- FIXED NAVBAR -->
+		<nav class="fixed-nav-bar">
+		  	<!-- Logo / link to main menu -->
+		  	<a href="/menu">SafeKeeper<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
+			<!-- dropdown menu -->
+			<div class="dropdown" id="menudropdown">
+			  	<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
+			  		Menu<span class="caret"></span>
+			  	</button>
+				<ul class="dropdown-menu">
+				    <li><a href="/add">Add Item</a></li>
+				    <li><a href="/inventory">View Inventory</a></li>
+				    <li><a href="/logout">Logout</a></li>
+			  	</ul>
+			</div>
+		</nav>
 
-	<!-- BACKGROUND IMAGE -->
-	<img class="bgimage" src="./assets/images/grey.jpg">
+		<!-- BACKGROUND IMAGE -->
+		<img class="bgimage" src="./assets/images/grey.jpg">
 
-	<div class="addWrapper">
-		<!-- FORM TO ADD AN ITEM -->
-		<div class="container" id="newItemForm">
-			<h2 id="addHeader">Add an Item</h2>	
-			<div class="row">
-				<div class="col-sm-10">
-					<form class="form-horizontal">
+		<div class="addWrapper">
+			<!-- FORM TO ADD AN ITEM -->
+			<div class="container" id="newItemForm">
+				<h2 id="addHeader">Add an Item</h2>	
+				<div class="row">
+					<div class="col-sm-10">
+						<form class="form-horizontal">
 
-						<!--item name input-->
-						<div class="form-group">
-							<label for="input_item_name" class="col-sm-3 control-label">Item Name</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="item_name" name="item_name" placeholder="Macbook Pro">
+							<!--item name input-->
+							<div class="form-group">
+								<label for="input_item_name" class="col-sm-3 control-label">Item Name</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="item_name" name="item_name" placeholder="Macbook Pro">
+								</div>
 							</div>
-						</div>
 
-						<!--location input-->
-						<div class="form-group">
-							<label for="input_location" class="col-sm-3 control-label">Location</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="location" placeholder="Bedroom">
+							<!--location input-->
+							<div class="form-group">
+								<label for="input_location" class="col-sm-3 control-label">Location</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="location" placeholder="Bedroom">
+								</div>
 							</div>
-						</div>
 
-						<!--category dropdown-->
-						<div class="form-group">
-							<label for="input_category" class="col-sm-3 control-label">Category</label>
-							<div class="col-sm-9">
-							<select class="form-control" id="category">
-								<option selected>Category</option>
-								<option>Electronics</option>
-								<option>Appliances</option>
-								<option>Furniture</option>
-								<option>Jewelry</option>
-								<option>Kitchenware</option>
-								<option>Tools / Machinery</option>
-								<option>Collectibles</option>
-								<option>Clothing</option>
-								<option>Recreation</option>
-								<option>Misc</option>
-							</select>	    
-								<!--<input type="text" class="form-control" id="category" placeholder="category"> -->
+							<!--category dropdown-->
+							<div class="form-group">
+								<label for="input_category" class="col-sm-3 control-label">Category</label>
+								<div class="col-sm-9">
+								<select class="form-control" id="category">
+									<option selected>Category</option>
+									<option>Electronics</option>
+									<option>Appliances</option>
+									<option>Furniture</option>
+									<option>Jewelry</option>
+									<option>Kitchenware</option>
+									<option>Tools / Machinery</option>
+									<option>Collectibles</option>
+									<option>Clothing</option>
+									<option>Recreation</option>
+									<option>Misc</option>
+								</select>	    
+									<!--<input type="text" class="form-control" id="category" placeholder="category"> -->
+								</div>
 							</div>
-						</div>
 
-						<!--value input-->
-						<div class="form-group">
-							<label for="input_value" class="col-sm-3 control-label">Value ($)</label>
-							<div class="col-sm-9">
-								<input type="number" class="form-control" id="value" placeholder="750">
+							<!--value input-->
+							<div class="form-group">
+								<label for="input_value" class="col-sm-3 control-label">Value ($)</label>
+								<div class="col-sm-9">
+									<input type="number" class="form-control" id="value" placeholder="750">
+								</div>
 							</div>
-						</div>
 
-						<!--date purchased input-->
-						<div class="form-group">
-							<label for="input_date" class="col-sm-3 control-label">Date Purchased</label>
-							<div class="col-sm-9">
-								<input type="date" class="form-control" id="date_purchased" placeholder="01/01/2017">
+							<!--date purchased input-->
+							<div class="form-group">
+								<label for="input_date" class="col-sm-3 control-label">Date Purchased</label>
+								<div class="col-sm-9">
+									<input type="date" class="form-control" id="date_purchased" placeholder="01/01/2017">
+								</div>
 							</div>
-						</div>
 
-						<!--purchase price input-->
-						<div class="form-group">
-							<label for="input_purchase_price" class="col-sm-3 control-label">Purchase Price ($)</label>
-							<div class="col-sm-9">
-								<input type="number" class="form-control" id="purchase_price" placeholder="1200">
+							<!--purchase price input-->
+							<div class="form-group">
+								<label for="input_purchase_price" class="col-sm-3 control-label">Purchase Price ($)</label>
+								<div class="col-sm-9">
+									<input type="number" class="form-control" id="purchase_price" placeholder="1200">
+								</div>
 							</div>
-						</div>
 
-						<!--serial number input-->
-						<div class="form-group">
-							<label for="input_serial_number" class="col-sm-3 control-label">Serial Number</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="serial_number" placeholder="7ADF89DF7">
+							<!--serial number input-->
+							<div class="form-group">
+								<label for="input_serial_number" class="col-sm-3 control-label">Serial Number</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="serial_number" placeholder="7ADF89DF7">
+								</div>
+							</div>	
+
+							<!--image url input-->
+							<div class="form-group">
+								<label for="input_image" class="col-sm-3 control-label">Image URL</label>
+								<div class="col-sm-9">
+									<input type="url" class="form-control" id="image" placeholder="macbook.jpg">
+								</div>
 							</div>
-						</div>	
 
-						<!--image url input-->
-						<div class="form-group">
-							<label for="input_image" class="col-sm-3 control-label">Image URL</label>
-							<div class="col-sm-9">
-								<input type="url" class="form-control" id="image" placeholder="macbook.jpg">
+							<!--notes input-->
+							<div class="form-group">
+								<label for="input_notes" class="col-sm-3 control-label" id="notes">Notes</label>
+								<div class="col-sm-9">
+									<textarea class="form-control" rows="3"></textarea>
+									<!-- <input type="text" class="form-control" id="input_notes" placeholder="notes"> -->
+								</div>
 							</div>
-						</div>
 
-						<!--notes input-->
-						<div class="form-group">
-							<label for="input_notes" class="col-sm-3 control-label" id="notes">Notes</label>
-							<div class="col-sm-9">
-								<textarea class="form-control" rows="3"></textarea>
-								<!-- <input type="text" class="form-control" id="input_notes" placeholder="notes"> -->
+							<!--alert user if required field is empty-->
+							<div>
+									<p class="alertUser"></p>
 							</div>
-						</div>
 
-						<!--alert user if required field is empty-->
-						<div>
-								<p class="alertUser"></p>
-						</div>
-
-						<!--submit button-->
-						<div class="form-group">
-							<div class="col-sm-offset-3 col-sm-9">
-								<button type="submit" class="btn btn-warning" id="newItem">Submit</button>
+							<!--submit button-->
+							<div class="form-group">
+								<div class="col-sm-offset-3 col-sm-9">
+									<button type="submit" class="btn btn-warning" id="newItem">Submit</button>
+								</div>
 							</div>
-						</div>
 
-					</form>
-				</div> <!--end of col 10 div-->
-			</div> <!--end of row div-->
-		</div> <!--end of form container-->
-	</div> <!--end of addWrapper-->
+						</form>
+					</div> <!--end of col 10 div-->
+				</div> <!--end of row div-->
+			</div> <!--end of form container-->
+		</div> <!--end of addWrapper-->
 
-	<!-- STICKY FOOTER -->
-	<footer class="footer">
-			<div class="container">
-					<p>
-						<a href="https://github.com/MASTIN/Virtual-Locker">
-						<i class="fa fa-github"></i></a>
-					</p>
-			</div>    
-	</footer>
+		<!-- STICKY FOOTER -->
+		<footer class="footer">
+				<div class="container">
+						<p>
+							<a href="https://github.com/MASTIN/Virtual-Locker">
+							<i class="fa fa-github"></i></a>
+						</p>
+				</div>    
+		</footer>
 	</div>
 	<!-- CUSTOM JAVASCRIPT -->
 	<script src="js/add.js"></script>
