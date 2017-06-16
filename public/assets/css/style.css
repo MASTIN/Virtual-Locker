@@ -1,6 +1,5 @@
 /* STICKY FOOTER STYLES */
 body {
-  	/* Margin bottom by footer height */
   	height: 100%;
 }
 
@@ -76,6 +75,7 @@ html {
 }
 
 #inventory {
+	min-height: 250px;
 	border: 5px #EBEBEC solid;
 }
 #inventory thead, tfoot {
@@ -132,6 +132,7 @@ th {
 .showNameInventory, .headerInventory {
 	color: #eb9316;
 }
+
 /* FOOTER STYLES */
 footer {
 	background: rgba(207, 200, 200, .6) url("../images/grey.jpg") no-repeat center center fixed;
@@ -141,7 +142,6 @@ footer {
 	border-top: solid 15px rgba(169,169,169, .3);
 	border-bottom: solid 60px rgba(169,169,169, .3);
 	text-align: center;
-	
 	height: 140px;
 	position: absolute;
 	bottom: 0;
