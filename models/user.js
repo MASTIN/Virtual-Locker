@@ -33,17 +33,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
-    }
-        // { //User has many Items
-        //     classMethods: {
-        //         associate: function(models) {
-        //             User.hasMany(models.Item, {
-        //                 //if a user is deleted, delete all their items too
-        //                 onDelete: "cascade"
-        //             });
-        //         }
-        //     }
-        // }
-    );
+    });
     return User;
 };

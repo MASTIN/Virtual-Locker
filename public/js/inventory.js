@@ -47,7 +47,7 @@ $(function() {
         makeTable();
     }
 
-    //Create the table and show rows of data on the inventory.html page
+    //Create the table and display on inventory page
     function makeTable() {
         var table = $('#inventory').DataTable({
             "data": arrayofItems,
@@ -83,7 +83,7 @@ $(function() {
             "order": [[2, 'asc']]
         });
         
-        // Add event listener for opening and closing details
+        //Event listener for opening and closing item details
         $('#inventory tbody').on('click', 'td.details-control', function () {
             var tr = $(this).closest('tr');
             var row = table.row( tr );
@@ -102,8 +102,7 @@ $(function() {
 
     /////**********EVENT LISTENERS**********/////
 
-    // Get the info of the item that was clicked and save to session storage
-    // to be used by edit.js & edit.html page
+    // Get the info of the item that was clicked and save to session storage for update
     $("#inventory").on("click", ".updateItem", function() {
         var id = $(this).attr('value');
 
@@ -119,14 +118,13 @@ $(function() {
         }
     });
 
-     //Deletes row when the trashcan icon on a line is clicked
+     //Delete row when the trashcan icon on a line is clicked
     $("#inventory").on("click", ".deleteItem", function() {
         console.log($(this).attr('value'));
         var id = $(this).attr('value');
         $.ajax({
             method: "DELETE",
             url: "/api/inventory/" + id
-
         });
         location.reload();
     });

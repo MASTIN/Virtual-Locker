@@ -28,7 +28,6 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-
     opacity: .5;
 }
 
@@ -50,7 +49,6 @@ html {
 .fixed-nav-bar a {
 	margin-left: 7%;
 	color: #3E3F47;
-	/*color: #eb9316;*/
 }
 
 .fixed-nav-bar a:hover {
