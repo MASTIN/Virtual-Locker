@@ -46,6 +46,14 @@
 	line-height: 90px;
 }
 
+#slogan {
+	color: #eb9316;
+	text-align: left;
+	position: relative;
+	top: -20px;
+	left: 7px;
+}
+
 #menuPagelogo {
 	width: 100px;
 	height: auto;
@@ -61,7 +69,7 @@
 }
 
 button.login:last-child {
-    margin-left: 15%;
+    margin-left: 13%;
 }
 
 .modal-backdrop.in {
