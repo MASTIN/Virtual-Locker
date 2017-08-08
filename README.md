@@ -4,6 +4,7 @@
 :lock:[Try it here](https://safe-stream-99507.herokuapp.com/)
 
 <img src="https://user-images.githubusercontent.com/21952950/29076066-5cee31b0-7c22-11e7-96d2-8db1b51ed3c1.png" width="600" alt="landing page">
+
 ## CONTENTS
 [:bust_in_silhouette: Sign in or Sign up](#user)
 
