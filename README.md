@@ -3,6 +3,8 @@
 #### A personal inventory for insurance, theft or relocation purposes.  
 :lock:[Try it here](https://safe-stream-99507.herokuapp.com/)
 
+<img src="https://user-images.githubusercontent.com/21952950/29076066-5cee31b0-7c22-11e7-96d2-8db1b51ed3c1.png" width="600" alt="landing page">
+
 ## CONTENTS
 [:bust_in_silhouette: Sign in or Sign up](#user)
 
@@ -23,11 +25,15 @@ ___
 ___
 ## INVENTORY :clipboard: <a name="inventory"></a>
 
+<img src="https://user-images.githubusercontent.com/21952950/29076280-15233f96-7c23-11e7-97c0-201b5f3ca0b3.png" width="600" alt="landing page">
+
+
 ***Your inventory contains all necessary information for insurance or relocation purposes.  You can sort your inventory table by item, location, category, value or date purchased.  You can also search your inventory to find specific items.  Your items will be securely saved in a database so your data will always be available unless you delete it.***
 
 ---
 ## ADD, UPDATE OR DELETE :pencil: <a name="CUD"></a>
 ### ADD
+<img src="https://user-images.githubusercontent.com/21952950/29076308-25ea3f82-7c23-11e7-93e8-3af249433f54.png" width="600" alt="landing page">
 
 ***You can easily add items to your inventory.  You just need an item name, a location and a category.  You can also add the current value, the date purchased, the purchase price, the serial number, notes and an image if you wish.***
 
